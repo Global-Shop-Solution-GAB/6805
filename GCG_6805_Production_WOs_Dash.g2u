@@ -1,0 +1,1989 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.FrmKA..Create(BaseForm)
+Gui.FrmKA..Size(15900,11700)
+Gui.FrmKA..MinX(15360)
+Gui.FrmKA..MinY(10695)
+Gui.FrmKA..Position(0,0)
+Gui.FrmKA..BackColor(-2147483633)
+Gui.FrmKA..MousePointer(0)
+Gui.FrmKA..Event(UnLoad,FrmKA_UnLoad)
+Gui.FrmKA..Caption("Production WOs Review Dashboard")
+Gui.FrmKA..AlwaysOnTop(False)
+Gui.FrmKA..FontName("Tahoma")
+Gui.FrmKA..FontSize(8.25)
+Gui.FrmKA..ControlBox(True)
+Gui.FrmKA..MaxButton(True)
+Gui.FrmKA..MinButton(True)
+Gui.FrmKA..Moveable(True)
+Gui.FrmKA..Sizeable(True)
+Gui.FrmKA..ShowInTaskBar(True)
+Gui.FrmKA..TitleBar(True)
+Gui.FrmKA.pbStatus.Create(ProgressBar)
+Gui.FrmKA.pbStatus.Size(3735,255)
+Gui.FrmKA.pbStatus.Position(60,360)
+Gui.FrmKA.pbStatus.Visible(True)
+Gui.FrmKA.lblStatus.Create(Label,"****Change****",False,3735,255,0,60,120,True,0,"Arial",8,-2147483633,0,0)
+Gui.FrmKA.lblStatus.BorderStyle(0)
+Gui.FrmKA.picGSSLogo.Create(PictureBox)
+Gui.FrmKA.picGSSLogo.Size(4125,960)
+Gui.FrmKA.picGSSLogo.Position(5520,45)
+Gui.FrmKA.picGSSLogo.Event(DblClick,picGSSLogo_DblClick)
+Gui.FrmKA.picGSSLogo.ToolTip("Double-Click for additional functions")
+Gui.FrmKA.picGSSLogo.Enabled(True)
+Gui.FrmKA.picGSSLogo.Visible(True)
+Gui.FrmKA.picGSSLogo.Zorder(0)
+Gui.FrmKA.framePermissions.Create(Frame)
+Gui.FrmKA.framePermissions.Size(4170,420)
+Gui.FrmKA.framePermissions.Position(11295,660)
+Gui.FrmKA.framePermissions.Enabled(True)
+Gui.FrmKA.framePermissions.Visible(True)
+Gui.FrmKA.framePermissions.Zorder(0)
+Gui.FrmKA.framePermissions.Caption("")
+Gui.FrmKA.framePermissions.FontName("Tahoma")
+Gui.FrmKA.framePermissions.FontSize(8.25)
+Gui.FrmKA.optView.Create(Option)
+Gui.FrmKA.optView.Size(765,330)
+Gui.FrmKA.optView.Position(150,60)
+Gui.FrmKA.optView.Caption("View")
+Gui.FrmKA.optView.BackColor(15790320)
+Gui.FrmKA.optView.ForeColor(0)
+Gui.FrmKA.optView.Parent("framePermissions")
+Gui.FrmKA.optView.Enabled(True)
+Gui.FrmKA.optView.Visible(True)
+Gui.FrmKA.optView.Zorder(0)
+Gui.FrmKA.optView.FontName("Tahoma")
+Gui.FrmKA.optView.FontSize(8.25)
+Gui.FrmKA.optEdit.Create(Option)
+Gui.FrmKA.optEdit.Enabled(False)
+Gui.FrmKA.optEdit.Size(840,330)
+Gui.FrmKA.optEdit.Position(1110,60)
+Gui.FrmKA.optEdit.Caption("Edit")
+Gui.FrmKA.optEdit.Parent("framePermissions")
+Gui.FrmKA.optEdit.Visible(True)
+Gui.FrmKA.optEdit.Zorder(0)
+Gui.FrmKA.optEdit.FontName("Tahoma")
+Gui.FrmKA.optEdit.FontSize(8.25)
+Gui.FrmKA.optIssue.Create(Option)
+Gui.FrmKA.optIssue.Enabled(False)
+Gui.FrmKA.optIssue.Size(870,330)
+Gui.FrmKA.optIssue.Position(2055,60)
+Gui.FrmKA.optIssue.Parent("framePermissions")
+Gui.FrmKA.optIssue.Caption("Issue")
+Gui.FrmKA.optIssue.Visible(True)
+Gui.FrmKA.optIssue.Zorder(0)
+Gui.FrmKA.optIssue.FontName("Tahoma")
+Gui.FrmKA.optIssue.FontSize(8.25)
+Gui.FrmKA.optWipToFG.Create(Option)
+Gui.FrmKA.optWipToFG.Enabled(False)
+Gui.FrmKA.optWipToFG.Size(1110,315)
+Gui.FrmKA.optWipToFG.Position(3000,60)
+Gui.FrmKA.optWipToFG.Parent("framePermissions")
+Gui.FrmKA.optWipToFG.Caption("Wip to FG")
+Gui.FrmKA.optWipToFG.Visible(True)
+Gui.FrmKA.optWipToFG.Zorder(0)
+Gui.FrmKA.optWipToFG.FontName("Tahoma")
+Gui.FrmKA.optWipToFG.FontSize(8.25)
+Gui.FrmKA.frameButtons.Create(Frame)
+Gui.FrmKA.frameButtons.Size(1980,510)
+Gui.FrmKA.frameButtons.Position(13455,75)
+Gui.FrmKA.frameButtons.Enabled(True)
+Gui.FrmKA.frameButtons.Visible(True)
+Gui.FrmKA.frameButtons.Zorder(0)
+Gui.FrmKA.frameButtons.Caption("")
+Gui.FrmKA.frameButtons.FontName("Tahoma")
+Gui.FrmKA.frameButtons.FontSize(8.25)
+Gui.FrmKA.cmdRefresh.Create(Button)
+Gui.FrmKA.cmdRefresh.Size(840,375)
+Gui.FrmKA.cmdRefresh.Position(90,75)
+Gui.FrmKA.cmdRefresh.Caption("REFRESH")
+Gui.FrmKA.cmdRefresh.Event(Click,cmdRefresh_Click)
+Gui.FrmKA.cmdRefresh.Parent("frameButtons")
+Gui.FrmKA.cmdRefresh.Enabled(True)
+Gui.FrmKA.cmdRefresh.Visible(True)
+Gui.FrmKA.cmdRefresh.Zorder(0)
+Gui.FrmKA.cmdRefresh.FontName("Tahoma")
+Gui.FrmKA.cmdRefresh.FontSize(8.25)
+Gui.FrmKA.cmdExport.Create(Button)
+Gui.FrmKA.cmdExport.Size(840,375)
+Gui.FrmKA.cmdExport.Position(1035,60)
+Gui.FrmKA.cmdExport.Caption("Export")
+Gui.FrmKA.cmdExport.Event(Click,cmdExport_Click)
+Gui.FrmKA.cmdExport.Parent("frameButtons")
+Gui.FrmKA.cmdExport.Enabled(True)
+Gui.FrmKA.cmdExport.Visible(True)
+Gui.FrmKA.cmdExport.Zorder(0)
+Gui.FrmKA.cmdExport.FontName("Tahoma")
+Gui.FrmKA.cmdExport.FontSize(8.25)
+Gui.FrmKA.chkCutOff.Create(CheckBox)
+Gui.FrmKA.chkCutOff.Size(900,300)
+Gui.FrmKA.chkCutOff.Position(45,735)
+Gui.FrmKA.chkCutOff.Caption("CutOff")
+Gui.FrmKA.chkCutOff.Event(Click,chkCutOff_Click)
+Gui.FrmKA.chkCutOff.Enabled(True)
+Gui.FrmKA.chkCutOff.Visible(True)
+Gui.FrmKA.chkCutOff.Zorder(0)
+Gui.FrmKA.chkCutOff.FontName("Tahoma")
+Gui.FrmKA.chkCutOff.FontSize(8.25)
+Gui.FrmKA.dtpStart.Create(DatePicker)
+Gui.FrmKA.dtpStart.Size(1290,285)
+Gui.FrmKA.dtpStart.Position(1620,735)
+Gui.FrmKA.dtpStart.Enabled(False)
+Gui.FrmKA.dtpStart.Visible(True)
+Gui.FrmKA.dtpStart.Zorder(0)
+Gui.FrmKA.dtpStart.CheckBox(False)
+Gui.FrmKA.dtpStart.FontName("Tahoma")
+Gui.FrmKA.dtpStart.FontSize(8.25)
+Gui.FrmKA.lbl1.Create(Label,"Start",True,480,255,0,1125,825,True,0,"Arial",8,-2147483633,0,0)
+Gui.FrmKA.lbl1.BorderStyle(0)
+Gui.FrmKA.lbl2.Create(Label,"End",True,405,255,0,3060,825,True,0,"Arial",8,-2147483633,0,0)
+Gui.FrmKA.lbl2.BorderStyle(0)
+Gui.FrmKA.dtpEnd.Create(DatePicker)
+Gui.FrmKA.dtpEnd.Size(1290,285)
+Gui.FrmKA.dtpEnd.Position(3495,735)
+Gui.FrmKA.dtpEnd.Enabled(False)
+Gui.FrmKA.dtpEnd.Visible(True)
+Gui.FrmKA.dtpEnd.Zorder(0)
+Gui.FrmKA.dtpEnd.CheckBox(False)
+Gui.FrmKA.dtpEnd.FontName("Tahoma")
+Gui.FrmKA.dtpEnd.FontSize(8.25)
+Gui.FrmKA.tab1.Create(Tab)
+Gui.FrmKA.tab1.Size(15495,9885)
+Gui.FrmKA.tab1.Position(60,1170)
+Gui.FrmKA.tab1.Enabled(True)
+Gui.FrmKA.tab1.Visible(True)
+Gui.FrmKA.tab1.Zorder(0)
+Gui.FrmKA.tab1.FontName("Tahoma")
+Gui.FrmKA.tab1.FontSize(8.25)
+Gui.FrmKA.tab1.Tabs(2)
+Gui.FrmKA.tab1.SetTab(0)
+Gui.FrmKA.tab1.Caption("All Jobs")
+Gui.FrmKA.tab1.SetTab(1)
+Gui.FrmKA.tab1.Caption("Due & Past Due")
+Gui.FrmKA.GsGCKA.Create(GsGridControl)
+Gui.FrmKA.GsGCKA.Size(15195,9255)
+Gui.FrmKA.GsGCKA.Position(90,105)
+Gui.FrmKA.GsGCKA.Event(RowCellClick,GsGridControlKA_RowCellClick)
+Gui.FrmKA.GsGCKA.Event(CellValueChanged,GsGridControlKA_CellValueChanged)
+Gui.FrmKA.GsGCKA.Parent("tab1",0)
+Gui.FrmKA.GsGCKA.Enabled(True)
+Gui.FrmKA.GsGCKA.Visible(True)
+Gui.FrmKA.GsGCKA.Zorder(0)
+Gui.FrmKA.gsDue.Create(GsGridControl)
+Gui.FrmKA.gsDue.Size(15195,9345)
+Gui.FrmKA.gsDue.Position(75,75)
+Gui.FrmKA.gsDue.Parent("tab1",1)
+Gui.FrmKA.gsDue.Event(RowCellClick,gsDue_RowCellClick)
+Gui.FrmKA.gsDue.Event(CellValueChanged,gsDue_CellValueChanged)
+Gui.FrmKA.gsDue.Enabled(True)
+Gui.FrmKA.gsDue.Visible(True)
+Gui.FrmKA.gsDue.Zorder(0)
+Gui.frmWeb..Create(BaseForm)
+Gui.frmWeb..Caption("Global Shop Solutions - Web Sites")
+Gui.frmWeb..Size(3990,2025)
+Gui.frmWeb..MinX(0)
+Gui.frmWeb..MinY(0)
+Gui.frmWeb..Position(0,0)
+Gui.frmWeb..BackColor(-2147483633)
+Gui.frmWeb..MousePointer(0)
+Gui.frmWeb..MaxButton(False)
+Gui.frmWeb..Sizeable(False)
+Gui.frmWeb..Event(UnLoad,frmWeb_UnLoad)
+Gui.frmWeb..MinButton(False)
+Gui.frmWeb..AlwaysOnTop(False)
+Gui.frmWeb..FontName("Tahoma")
+Gui.frmWeb..FontSize(8.25)
+Gui.frmWeb..ControlBox(True)
+Gui.frmWeb..Moveable(True)
+Gui.frmWeb..ShowInTaskBar(True)
+Gui.frmWeb..TitleBar(True)
+Gui.frmWeb.cmdGSS.Create(Button)
+Gui.frmWeb.cmdGSS.Size(3615,375)
+Gui.frmWeb.cmdGSS.Position(120,45)
+Gui.frmWeb.cmdGSS.Caption("Global Shop Solutions")
+Gui.frmWeb.cmdGSS.Event(Click,cmdGSS_Click)
+Gui.frmWeb.cmdGSS.Enabled(True)
+Gui.frmWeb.cmdGSS.Visible(True)
+Gui.frmWeb.cmdGSS.Zorder(0)
+Gui.frmWeb.cmdGSS.FontName("Tahoma")
+Gui.frmWeb.cmdGSS.FontSize(8.25)
+Gui.frmWeb.cmdServ.Create(Button)
+Gui.frmWeb.cmdServ.Size(3615,375)
+Gui.frmWeb.cmdServ.Position(120,450)
+Gui.frmWeb.cmdServ.Caption("ServiceWeb")
+Gui.frmWeb.cmdServ.Event(Click,cmdServ_Click)
+Gui.frmWeb.cmdServ.Enabled(True)
+Gui.frmWeb.cmdServ.Visible(True)
+Gui.frmWeb.cmdServ.Zorder(0)
+Gui.frmWeb.cmdServ.FontName("Tahoma")
+Gui.frmWeb.cmdServ.FontSize(8.25)
+Gui.frmWeb.cmdUpd.Create(Button)
+Gui.frmWeb.cmdUpd.Size(3615,375)
+Gui.frmWeb.cmdUpd.Position(120,855)
+Gui.frmWeb.cmdUpd.Caption("GSS Updates")
+Gui.frmWeb.cmdUpd.Event(Click,cmdUpd_Click)
+Gui.frmWeb.cmdUpd.Enabled(True)
+Gui.frmWeb.cmdUpd.Visible(True)
+Gui.frmWeb.cmdUpd.Zorder(0)
+Gui.frmWeb.cmdUpd.FontName("Tahoma")
+Gui.frmWeb.cmdUpd.FontSize(8.25)
+Gui.frmWeb.cmdResetGsGC.Create(Button)
+Gui.frmWeb.cmdResetGsGC.Size(3615,375)
+Gui.frmWeb.cmdResetGsGC.Position(120,1260)
+Gui.frmWeb.cmdResetGsGC.Caption("Reset All Columns")
+Gui.frmWeb.cmdResetGsGC.Event(Click,cmdResetGsGC_Click)
+Gui.frmWeb.cmdResetGsGC.Enabled(True)
+Gui.frmWeb.cmdResetGsGC.Visible(True)
+Gui.frmWeb.cmdResetGsGC.Zorder(0)
+Gui.frmWeb.cmdResetGsGC.FontName("Tahoma")
+Gui.frmWeb.cmdResetGsGC.FontSize(8.25)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.bLoadData.Declare(Boolean)
+V.Global.iPrintAudit.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Bryan Pham
+'06/15/2022
+'WIL160-42920220634-0
+'Scope: modifed 5840 and apply some logic from 5669
+
+F.Intrinsic.Control.Try
+	V.Local.bEditGrp.Declare
+	V.Local.sIcon.Declare
+	V.Local.sGssLogo.Declare
+	v.Local.bEx.Declare
+	
+	F.Intrinsic.String.Build("{0}\GAB\GAS\gss2.ico",V.Caller.PluginsDir,v.Local.sIcon)
+	F.Intrinsic.String.Build("{0}\GAB\GAS\GCG_5840_GSSLogo.png",V.Caller.PluginsDir,V.Local.sGssLogo)
+	Gui.frmWeb..Icon(V.Local.sIcon)
+	Gui.frmKA..Icon(V.Local.sIcon)
+	f.Intrinsic.File.Exists(v.Local.sGssLogo,v.Local.bEx)
+	f.Intrinsic.Control.If(v.Local.bEx)
+		Gui.frmKA.picGSSLogo.Picture(V.Local.sGssLogo)
+	f.Intrinsic.Control.EndIf	
+	
+	F.Intrinsic.Control.CallSub("setanchors")	
+	Gui.frmKA.optView.Value(True)
+	gui.FrmKA.tab1.SetTab(0)	
+
+	'Check Print Audit Option
+	F.Global.General.ReadOption(400367,3,0000,V.Global.iPrintAudit)	
+	
+	'Check User Permissions
+	F.Global.Security.IsInGroup(v.Caller.User,"EditWO",V.Local.bEditGrp)
+	F.Intrinsic.Control.If(v.Local.bEditGrp,=,True)
+		Gui.frmKA.optEdit.Enabled(true)
+	F.Intrinsic.Control.EndIf
+	
+	'Connection
+	F.ODBC.Connection!con.OpenCompanyConnection
+	
+	Gui.frmKA..Show
+	
+	F.Intrinsic.Control.BlockEvents
+	f.Intrinsic.Control.CallSub("lockscreen")
+	f.Intrinsic.Control.CallSub("checkTable")
+	f.Intrinsic.Control.CallSub("CheckPermissions")
+	f.Intrinsic.Control.CallSub("loaddtdvKA")
+	F.Intrinsic.Control.CallSub("Deserialize")
+	f.Intrinsic.Control.CallSub("enablescreen")
+	F.Intrinsic.Control.UnBlockEvents
+
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.CheckPermissions.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare	
+	v.Local.bEditInventory.Declare
+	v.Local.bEditWO.Declare
+	V.Local.bIssueGrp.Declare
+	V.Local.bWiptoFG.Declare	
+	
+	'Check if any of the menu items have edit permissions
+	Function.Global.Security.CheckUserAccessIPM(371,0,v.Local.bEditInventory)
+	Function.Global.Security.CheckUserAccessIPM(527,1,v.Local.bEditWO)
+	F.Intrinsic.Control.If(V.Local.bEditInventory,=,True,or,v.Local.bEditWO,=,True)
+		Gui.FrmKA.optEdit.Enabled(True)		
+	F.Intrinsic.Control.EndIf
+
+	Function.Global.Security.CheckUserAccessIPM(533,0,v.Local.bIssueGrp)
+	F.Intrinsic.Control.If(v.Local.bIssueGrp,=,True)
+		Gui.FrmKA.optIssue.Enabled(True)
+	F.Intrinsic.Control.EndIf
+
+	Function.Global.Security.CheckUserAccessIPM(544,0,v.Local.bWiptoFG)
+	F.Intrinsic.Control.If(v.Local.bWiptoFG,=,True)
+		Gui.FrmKA.optWiptoFG.Enabled(True)
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.CheckPermissions.End
+
+Program.Sub.UnLoad.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	f.Intrinsic.Control.If(v.ODBC.con.State,=,1)
+		F.ODBC.Connection!con.Close
+	f.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project 6805 - GCG_6805_OpenJobReview.g2u: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End 
+F.Intrinsic.Control.EndTry
+Program.Sub.UnLoad.End
+
+Program.Sub.Catch_Handling.Start
+v.Local.sError.Declare
+v.Local.sFile.Declare
+F.Intrinsic.String.Build("Project 6805 - GCG_6805_OpenJobReview.g2u: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Args.ScriptPath,V.Ambient.Newline,V.Args.CurrentSubroutine,V.Args.ErrorNumber,V.Args.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError)	
+f.Intrinsic.Control.CallSub("Unload")
+Program.Sub.Catch_Handling.End
+
+Program.Sub.FrmKA_UnLoad.Start
+F.Intrinsic.Control.Try
+
+	F.Intrinsic.Control.If(V.Global.bLoadData)
+		F.Intrinsic.Control.CallSub(Serialize)
+	F.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.CallSub("Unload")
+
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.FrmKA_UnLoad.End
+
+Program.Sub.LockScreen.Start
+F.Intrinsic.Control.Try
+	
+	Gui.FrmKA..Enabled(False)
+	Gui.FrmKA.frameButtons.Enabled(False)
+	Gui.FrmKA.framePermissions.Enabled(False)
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.LockScreen.End
+
+Program.Sub.enableScreen.Start
+F.Intrinsic.Control.Try
+	
+	Gui.FrmKA.frameButtons.Enabled(True)
+	Gui.FrmKA.framePermissions.Enabled(True)
+	Gui.FrmKA..Enabled(True)
+	Gui.FrmKA.lblStatus.Visible(False)
+	Gui.FrmKA.pbStatus.Visible(False)
+	gui.FrmKA..AlwaysOnTop(True)
+	gui.FrmKA..AlwaysOnTop(False)
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.enableScreen.End
+
+Program.Sub.setAnchors.Start
+F.Intrinsic.Control.Try
+	
+	'0 - None
+	'1 - Top
+	'2 - Bottom
+	'4 - Left
+	'8 - Right
+	'Add Numbers for combinations
+	
+	Gui.FrmKA.GsGCKA.Anchor(15)
+	Gui.FrmKA.gsDue.Anchor(15)
+	gui.FrmKA.tab1.Anchor(15)
+	Gui.FrmKA.picGSSLogo.Anchor(1)
+	Gui.FrmKA.frameButtons.Anchor(9)
+	Gui.FrmKA.framePermissions.Anchor(9)
+	'Gui.FrmKA.frameLeg.Anchor(9)
+
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.setAnchors.End
+
+Program.Sub.checkTable.Start
+F.Intrinsic.Control.Try
+	
+	v.Local.bTable.Declare(Boolean)
+
+	F.ODBC.Connection!con.TableExists("GAB_4169_WO_NOTES",V.Local.bTable)
+	F.Intrinsic.Control.If(v.Local.bTable,=,false)
+		F.ODBC.Connection!Con.Execute("CREATE TABLE GAB_4169_WO_NOTES(JOB CHAR(6),SUFFIX CHAR(3),NOTES LONGVARCHAR);")
+		F.ODBC.Connection!Con.Execute("CREATE INDEX GAB_4169_WO_NOTES01 USING 1 ON GAB_4169_WO_NOTES(JOB);")
+		F.ODBC.Connection!Con.Execute("CREATE INDEX GAB_4169_WO_NOTES02 USING 2 ON GAB_4169_WO_NOTES(SUFFIX);")
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.checkTable.End
+
+Program.Sub.Serialize.Start
+F.Intrinsic.Control.Try
+	v.Local.sUserID.Declare
+	V.Local.sSerialize.Declare
+	v.Local.sSQL.Declare	
+	
+	F.Global.Security.GetUserID(v.Caller.User,v.Caller.CompanyCode,v.Local.sUserID)
+	'Delete old registry records
+	F.ODBC.Connection!common.OpenCommonConnection
+	f.Intrinsic.String.Build("Delete From Gs_Registry Where User_ID = '{0}' and Company = '{1}' and Reg_ID = '6805' and Seq = '1001' and Program = '{2}';",v.Local.sUserID,v.Caller.CompanyCode,"gvKA",v.Local.sSQL)
+	F.ODBC.Connection!common.Execute(v.Local.sSQL)	
+	f.Intrinsic.String.Build("Delete From Gs_Registry Where User_ID = '{0}' and Company = '{1}' and Reg_ID = '6805' and Seq = '1001' and Program = '{2}';",v.Local.sUserID,v.Caller.CompanyCode,"gvDue",v.Local.sSQL)
+	F.ODBC.Connection!common.Execute(v.Local.sSQL)		
+	f.ODBC.Connection!common.Close
+	'Serialize
+	'gvKA
+	Gui.FrmKA.GsGCKA.Serialize("gvKA",V.Local.sSerialize)
+	F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"gvKA",6805,1001,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+	'gvDue
+	Gui.FrmKA.gsDue.Serialize("gvDue",V.Local.sSerialize)
+	F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"gvDue",6805,1001,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+F.Intrinsic.Control.Try	
+	V.Local.sSerialize.Declare
+	
+	'gvKA
+	F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"gvKA",6805,1001,6,"",V.Local.sSerialize)
+	F.Intrinsic.Control.If(V.Local.sSerialize,<>,"")
+		Gui.FrmKA.GsGCKA.Deserialize(V.Local.sSerialize)
+	F.Intrinsic.Control.EndIf
+	'gvDue
+	F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"gvDue",6805,1001,6,"",V.Local.sSerialize)
+	F.Intrinsic.Control.If(V.Local.sSerialize,<>,"")
+		Gui.FrmKA.gsDue.Deserialize(V.Local.sSerialize)
+	F.Intrinsic.Control.EndIf	
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.loaddtdvKA.Start
+F.Intrinsic.Control.Try
+	
+	v.Local.iProgress.Declare
+	v.Local.iCnt.Declare
+	v.Local.sJob.Declare
+	v.Local.sSfx.Declare
+	v.Local.iFor.Declare
+	v.Local.iOne.Declare
+	v.Local.sMaterial.Declare
+	v.Local.iCount.Declare
+	v.Local.iMult.Declare
+	V.Local.sSQL.Declare
+	v.Local.sret.declare
+	v.Local.sFilter.Declare
+	v.Local.dStart.Declare
+	v.Local.dEnd.Declare
+	v.Local.sDateDueRange.Declare
+	V.Local.bIssued.Declare
+	v.Local.sColumn.Declare
+	v.Local.fTemp.Declare
+	
+	v.Local.dStart.Set(v.Screen.FrmKA!dtpStart.Value)
+	v.Local.dEnd.Set(v.Screen.FrmKA!dtpEnd.Value)
+	
+	f.Intrinsic.Control.If(v.Screen.FrmKA!chkCutOff.Value,=,1)
+		f.Intrinsic.Control.If(v.Local.dStart,>,v.Local.dEnd)
+			f.Intrinsic.UI.Msgbox("Invalid date range.","Attention")
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf
+		f.Intrinsic.String.Build(" and (Date_Due between '{0}' and '{1}') ",v.Local.dStart.PervasiveDate,v.Local.dEnd.PervasiveDate,v.Local.sDateDueRange)
+	f.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.DataTable.dtKA.Exists)
+		F.Data.DataTable.Close("dtKA")
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.String.Build("SELECT rtrim(C.NAME_CUSTOMER) as Name_Customer,A.JOB,A.SUFFIX,rtrim(A.PART) as Part,rtrim(DESCRIPTION) as Description,RTRIM(A.PRODUCT_LINE) as PRODUCT_LINE,'' as PL_DESC, PRIORITY,Case When IsNull(Flag_Hold,'') = 'Y' Then Convert(1,SQL_Bit) Else Convert(0,SQL_Bit) End  as OnHold,(A.QTY_ORDER - A.QTY_COMPLETED) AS QTY_LEFT,DATE_DUE,'' AS {0}Col1{0},'' AS {0}Col2{0},'' AS {0}Col3{0},'' AS {0}Col4{0},'' AS {0}Col5{0},'' AS {0}Col6{0},'' AS {0}Col7{0},'' AS {0}Col8{0},'' AS {0}Col9{0},'' AS {0}Col10{0},'' AS {0}Col11{0},'' AS {0}Col12{0},'' AS {0}Col13{0},'' AS {0}Col14{0},'' AS {0}Col15{0},'' AS seqRes,'' AS NOTES,A.LOCATION,PARENT_WO,PARENT_SUFFIX_PARENT,CONCAT(A.JOB,A.SUFFIX) AS JBSF,Case When a.DATE_ORIG_DUE = '1900-01-01' Then Null Else a.Date_Orig_Due End as Date_Orig_Due, A.QTY_ORDER , A.QTY_CUSTOMER, '' as READY, CONVERT(0,SQL_BIT) AS ISSUED,CONVERT(0,SQL_BIT) AS IND_FLAG,Convert(0,SQL_Bit) as FullAllocated,COALESCE((select top 1 vjo.date_start from v_job_operations vjo where vjo.lmo = 'L' and VJO.JOB = A.JOB and VJO.SUFFIX = A.SUFFIX and VJO.SEQ < '990000'),'1900-01-01') AS DATE_START,CODE_SOURCE FROM V_JOB_HEADER A LEFT JOIN V_WO_USER_FLDS B ON A.JOB = B.JOB AND A.SUFFIX = B.SUFFIX LEFT JOIN V_CUSTOMER_MASTER C ON A.CUSTOMER = C.CUSTOMER LEFT JOIN INVENTORY_MST2 D ON A.PART = D.PART AND A.LOCATION = D.LOCATION WHERE DATE_CLOSED = '1900-1-1' {1} order by DATE_DUE;",V.Ambient.DblQuote,v.Local.sDateDueRange,V.Local.sSQL)
+
+	F.Data.DataTable.CreateFromSQL("dtKA","con",V.Local.sSQL,true)	
+	
+	f.Intrinsic.Control.If(v.DataTable.dtKA.RowCount,=,0)
+		f.Intrinsic.UI.Msgbox("No Record found.","Attention")
+		gui.FrmKA.GsGCKA.AddGridviewFromDatatable("gvKA","dtKA")
+		gui.FrmKA.GsGCKA.MainView("gvKA")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	'IND_FLAG
+	F.Data.Dictionary.CreateFromSQL("dIndirect","con","SELECT DISTINCT CONCAT(JOB,SUFFIX) AS JS,CONVERT(IF('' = '',1,0),SQL_BIT) FROM IND_LBR_ACCTS;")
+	F.Data.Dictionary.SetDefaultReturn("dIndirect",False)
+	F.Data.DataTable.FillFromDictionary("dtKA","dIndirect","JBSF","IND_FLAG")
+	F.Data.Dictionary.Close("dIndirect")
+	
+	'Add Note
+	F.Data.Dictionary.CreateFromSQL("dNotes","con","SELECT CONCAT(JOB,SUFFIX) AS JBSF, RTRIM(NOTES) AS NOTES FROM GAB_4169_WO_NOTES;")
+	F.Data.Dictionary.SetDefaultReturn("dNotes","")
+	F.Data.DataTable.FillFromDictionary("dtKA","dNotes","JBSF","NOTES")
+	F.Data.Dictionary.Close("dNotes")
+	'BP - add PL description
+	F.Data.Dictionary.CreateFromSQL("dPL","con","SELECT RTRIM(PROD_LINE), RTRIM(PL_NAME) FROM V_PL_MASTER;")
+	F.Data.Dictionary.SetDefaultReturn("dPL","")
+	F.Data.DataTable.FillFromDictionary("dtKA","dPL","PRODUCT_LINE","PL_DESC")
+	F.Data.Dictionary.Close("dPL")
+	
+	'BP - fill in ComplDate
+	f.Data.Datatable.AddColumn("dtKA","ComplDate","DATE")
+	F.Data.Dictionary.CreateFromSQL("dComplDate","con","SELECT JS,duedate as ComplDate  FROM APSV3_JBLines where js + cast(seq as char(6)) in (select js + cast(max(seq) as char(6)) from APSV3_JBLINES group by JS) order by js;")
+	F.Data.Dictionary.SetDefaultReturn("dComplDate","01-01-1900")
+	F.Data.DataTable.FillFromDictionary("dtKA","dComplDate","JBSF","ComplDate")
+	F.Data.Dictionary.Close("dComplDate")
+	
+	'BP - fill in PCSREMAIN for using in READY later
+	f.Data.Datatable.AddColumn("dtKA","PCSREMAIN","Float")
+	F.Data.Dictionary.CreateFromSQL("dPCSREMAIN","con","SELECT JS,PCSREMAIN FROM APSV3_JBLines;")
+	F.Data.Dictionary.SetDefaultReturn("dPCSREMAIN",0)
+	F.Data.DataTable.FillFromDictionary("dtKA","dPCSREMAIN","JBSF","PCSREMAIN")
+	F.Data.Dictionary.Close("dPCSREMAIN")
+	
+	Gui.FrmKA.lblStatus.Visible(True)
+	Gui.FrmKA.pbStatus.Visible(True)
+	Gui.FrmKA.lblStatus.Caption("Loading Work Orders....")
+	Gui.FrmKA.pbStatus.Min(0)
+	Gui.FrmKA.pbStatus.Max(V.DataTable.dtKA.RowCount)
+
+	f.Intrinsic.Control.If(v.DataTable.Rem.Exists)
+		f.Data.DataTable.Close("Rem")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataTable.CreateFromSQL("Rem","con","SELECT DISTINCT CONCAT(A.JOB,A.SUFFIX) AS JBSF,CONCAT(CONCAT(A.JOB,A.SUFFIX),A.SEQ) AS JSS,A.JOB,A.SUFFIX,A.SEQ ,B.SEQRES,Convert(Convert(Round(B.HOURSREM,2),SQL_Float),SQL_Char) AS REM_HRS,Convert(Round(B.HOURSREM,2),SQL_Float) as  REM_HRS2 FROM JOB_OPERATIONS A LEFT JOIN APSV3_JBLINES B ON JSS = B.JSS WHERE A.LMO = 'L' AND A.SEQ NOT IN ('996000','998500') AND JBSF IN (SELECT CONCAT(JOB,SUFFIX) AS JBSFX FROM V_JOB_HEADER WHERE DATE_CLOSED = '1900-1-1') ORDER BY  A.JOB,A.SUFFIX,A.SEQ;",True)
+	
+	f.Data.Dictionary.CreateFromDataTable("RemDict","Rem","JSS","REM_HRS")
+	f.Data.Dictionary.SetDefaultReturn("RemDict","")
+	f.Data.Dictionary.CreateFromDataTable("RemDict2","Rem","JSS","REM_HRS2")
+	f.Data.Dictionary.SetDefaultReturn("RemDict2",0)	
+	
+	f.Intrinsic.Control.If(v.DataTable.Matl.Exists)
+		f.Data.DataTable.Close("Matl")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataTable.CreateFromSQL("Matl","con","select seqres,Job,Sfx,Seq From APSV3_JBLines  where seqType = '2' ",True)
+	f.Data.DataView.Create("Matl","dvMatl")
+	'and APS.JOB = '{0}' and APS.SFX = '{1}' ORDER by APS.SEQ
+	f.Intrinsic.Control.If(v.DataTable.APS.Exists)
+		f.Data.DataTable.Close("APS")
+	f.Intrinsic.Control.EndIf
+	'BP - add Op Code
+	'f.Data.DataTable.CreateFromSQL("APS","con","Select IF(ComplDate IS not NULL,'#',if(convert(left(duedate,10),sql_date) < curdate(),'!','')) + SeqRes as WC,Job,Sfx,Seq,Job+Sfx+right('000000' + Convert(Seq,SQL_Char),6) as JSS,'' as Rem_Hrs,convert(0,SQL_Integer) as Rem_Hrs2 From APSV3_JBLines Where (SeqType = '1' OR SeqType='3')",True)
+	f.Data.DataTable.CreateFromSQL("APS","con","Select IF(ComplDate IS not NULL,'#',if(convert(left(duedate,10),sql_date) < curdate(),'!','')) + RTRIM(SeqRes) as WC,' ' + RTRIM(OPCode) as OPCode,Job,Sfx,Seq,Job+Sfx+right('000000' + Convert(Seq,SQL_Char),6) as JSS,'' as Rem_Hrs,convert(0,SQL_Float) as Rem_Hrs2, right('000000' + Convert(Seq,SQL_Char),6) as APS_SEQ From APSV3_JBLines Where (SeqType = '1' OR SeqType='3') order by APS_SEQ",True)
+	f.Data.DataView.Create("APS","dvAPS")
+	' and JOB = '{0}' and SFX = '{1}' Order by JOB, SFX, SEQ
+	f.Data.DataTable.FillFromDictionary("APS","RemDict","JSS","REM_HRS")
+	f.Data.Dictionary.Close("RemDict")
+	f.Data.DataTable.FillFromDictionary("APS","RemDict2","JSS","REM_HRS2")
+	f.Data.Dictionary.Close("RemDict2")	
+	'f.Data.DataTable.AddExpressionColumn("APS","SR","String","[WC]")
+	f.Data.DataTable.AddExpressionColumn("APS","SR","String","[WC] + [OPCode]")
+	f.Data.DataTable.AddExpressionColumn("APS","Rem_Hrs3","Float","IIF(substring([WC],1,1) <> '#',Rem_Hrs2,0)")
+
+	f.Data.DataTable.AddColumn("dtKA","Rem1","Float",0)
+	f.Data.DataTable.AddColumn("dtKA","Rem2","Float",0)
+	f.Data.DataTable.AddColumn("dtKA","Rem3","Float",0)
+	f.Data.DataTable.AddColumn("dtKA","Rem4","Float",0)
+	f.Data.DataTable.AddColumn("dtKA","Rem5","Float",0)
+	f.Data.DataTable.AddColumn("dtKA","Rem6","Float",0)
+	f.Data.DataTable.AddColumn("dtKA","Rem7","Float",0)
+	f.Data.DataTable.AddColumn("dtKA","Rem8","Float",0)
+	f.Data.DataTable.AddColumn("dtKA","Rem9","Float",0)
+	f.Data.DataTable.AddColumn("dtKA","Rem10","Float",0)
+	f.Data.DataTable.AddColumn("dtKA","Rem11","Float",0)
+	f.Data.DataTable.AddColumn("dtKA","Rem12","Float",0)
+	f.Data.DataTable.AddColumn("dtKA","Rem13","Float",0)
+	f.Data.DataTable.AddColumn("dtKA","Rem14","Float",0)
+	f.Data.DataTable.AddColumn("dtKA","Rem15","Float",0)
+
+	
+	'F.Data.DataView.Create("dtKA","dvKA",22,"Issued <> True AND IND_FLAG <> True and FullAllocated = 0","DATE_START,PRIORITY,JOB,SUFFIX")
+	
+	'Create Part Loc , Original Onhand Qty
+	f.Intrinsic.Control.If(v.DataTable.PartLocMRP.Exists)
+		f.Data.DataTable.Close("PartLocMRP")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataTable.CreateFromSQL("PartLocMrp","con","Select  RTRIM(i1.Part) as PART, RTRIM(i1.Location) as Location, i1.Qty_Onhand,i1.Qty_Onhand - Isnull(i3.Quantity,0) as Mrp_QtyOrig,i1.Qty_Onhand - Isnull(i3.Quantity,0) as Mrp_Qty from Inventory_mstr i1 left join (Select  i2.Part,i2.Location,Sum(Quantity) as Quantity from Item_Master i2 where i2.Alloc_Type = 'W' Group by i2.Part,i2.Location) i3 on i1.Part = i3.Part and i1.Location = i3.Location",True)
+	f.Data.DataView.Create("PartLocMrp","dvPartLocMrp")
+'	
+'	'Allocated by job,suffix Seq Dict
+'	f.Data.Datatable.AddColumn("dtKA","Allocated","Float")
+'	f.Data.Dictionary.CreateFromSQL("AllocBySeqDict","con","select Part + '-' + Location + '-' + Heat, Quantity from Item_Master where Alloc_Type = 'W'")
+'	f.Data.Dictionary.SetDefaultReturn("AllocBySeqDict",0)
+'	f.Data.DataTable.FillFromDictionary("dtKA","AllocBySeqDict","PartLocJobSuffixSeq","Allocated")
+'	f.Data.Dictionary.Close("AllocBySeqDict")
+	
+	'BP - get open operations
+	f.Intrinsic.Control.If(v.DataTable.SeqType2.Exists)
+		f.Data.DataTable.Close("SeqType2")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataTable.CreateFromSQL("SeqType2","con","Select JOB,SFX,SEQRES,SEQTYPE from APSV3_JBLINES where SEQTYPE ='2' and ComplDate is Null;",True)
+	f.Data.DataView.Create("SeqType2","dvSeqType2")	
+	
+	'BP - active operations
+	f.Data.DataTable.AddColumn("dtKA","ACTIVE_OPS","String")
+	f.Data.Datatable.AddColumn("dtKA","SEQ_ACTIVE","String")
+	f.Data.Dictionary.CreateFromSQL("dictSEQActive","con","Select JOB+SUFFIX,SEQ from V_JOBS_IN_PROCESS_G")
+	f.Data.Dictionary.SetDefaultReturn("dictSEQActive","")
+	f.Data.Datatable.FillFromDictionary("dtKA","dictSEQActive","JBSF","SEQ_ACTIVE")
+	f.Data.Dictionary.Close("dictSEQActive")
+	
+	'BP
+	f.Data.DataView.Create("dtKA","dvKA")
+	
+	F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataTable.dtKA.RowCount--,1)
+		Gui.FrmKA.pbStatus.Value(v.Local.iCnt)
+		'BP - 
+		f.Intrinsic.String.Build("Job = '{0}' and Sfx = '{1}' and APS_SEQ < '{2}'",v.datatable.dtKA(v.Local.iCnt).JOB!fieldValString,V.datatable.dtKA(v.Local.iCnt).SUFFIX!fieldvalString,V.datatable.dtKA(v.Local.iCnt).SEQ_ACTIVE!fieldvalString,v.Local.sFilter)
+		f.Data.DataView.SetFilter("APS","dvAPS",v.Local.sFilter)
+		'if there is something in the dv, we have active operation
+		f.Intrinsic.Control.If(v.DataView.APS!dvAPS.RowCount,>,0)
+			'active operation has the greatest index but column starts from 1
+			f.Intrinsic.Math.Add(v.DataView.APS!dvAPS.RowCount,1,v.Local.fTemp)
+			f.Intrinsic.String.Build("Col{0}",v.Local.fTemp,v.Local.sColumn)
+			f.Data.Datatable.SetValue("dtKA",v.Local.iCnt,"ACTIVE_OPS",v.Local.sColumn)
+		f.Intrinsic.Control.EndIf
+		
+		'Material
+		f.Intrinsic.String.Build("Job = '{0}' and Sfx = '{1}'",v.datatable.dtKA(v.Local.iCnt).JOB!fieldValString,V.datatable.dtKA(v.Local.iCnt).SUFFIX!fieldvalString,v.Local.sFilter)
+		f.Data.DataView.SetFilter("Matl","dvMatl",v.Local.sFilter)
+		f.Data.DataView.SetSort("Matl","dvMatl","Seq")
+		f.Intrinsic.Control.IIF(v.DataView.Matl!dvMatl.RowCount,<>,0,v.DataView.Matl!dvMatl(0).seqres!FieldValString,"",v.Local.sMaterial)
+		'From 1 to 15
+		f.Data.DataView.SetFilter("APS","dvAPS",v.Local.sFilter)
+		f.Data.DataView.SetSort("APS","dvAPS","JOB,SFX,SEQ")
+		
+		f.Intrinsic.Control.If(v.DataView.APS!dvAPS.RowCount,=,0)
+			F.data.dataTable.SetValue("dtKA",v.Local.iCnt,"seqRes",v.Local.sMaterial)
+			
+		f.Intrinsic.Control.ElseIf(v.DataView.APS!dvAPS.RowCount,=,1)
+			F.data.dataTable.SetValue("dtKA",v.Local.iCnt,"seqRes",v.Local.sMaterial,"Col1",v.DataView.APS!dvAPS(0).SR!FieldValTrim,"Rem1",v.DataView.APS!dvAPS(0).Rem_Hrs3!FieldValString)
+			
+		f.Intrinsic.Control.ElseIf(v.DataView.APS!dvAPS.RowCount,=,2)
+			F.data.dataTable.SetValue("dtKA",v.Local.iCnt,"seqRes",v.Local.sMaterial,"Col1",v.DataView.APS!dvAPS(0).SR!FieldValTrim,"Col2",v.DataView.APS!dvAPS(1).SR!FieldValTrim,"Rem1",v.DataView.APS!dvAPS(0).Rem_Hrs3!FieldValString,"Rem2",v.DataView.APS!dvAPS(1).Rem_Hrs3!FieldValString)
+			
+		f.Intrinsic.Control.ElseIf(v.DataView.APS!dvAPS.RowCount,=,3)
+			F.data.dataTable.SetValue("dtKA",v.Local.iCnt,"seqRes",v.Local.sMaterial,"Col1",v.DataView.APS!dvAPS(0).SR!FieldValTrim,"Col2",v.DataView.APS!dvAPS(1).SR!FieldValTrim,"Col3",v.DataView.APS!dvAPS(2).SR!FieldValTrim,"Rem1",v.DataView.APS!dvAPS(0).Rem_Hrs3!FieldValString,"Rem2",v.DataView.APS!dvAPS(1).Rem_Hrs3!FieldValString,"Rem3",v.DataView.APS!dvAPS(2).Rem_Hrs3!FieldValString)
+			
+		f.Intrinsic.Control.ElseIf(v.DataView.APS!dvAPS.RowCount,=,4)
+			F.data.dataTable.SetValue("dtKA",v.Local.iCnt,"seqRes",v.Local.sMaterial,"Col1",v.DataView.APS!dvAPS(0).SR!FieldValTrim,"Col2",v.DataView.APS!dvAPS(1).SR!FieldValTrim,"Col3",v.DataView.APS!dvAPS(2).SR!FieldValTrim,"Col4",v.DataView.APS!dvAPS(3).SR!FieldValTrim,"Rem1",v.DataView.APS!dvAPS(0).Rem_Hrs3!FieldValString,"Rem2",v.DataView.APS!dvAPS(1).Rem_Hrs3!FieldValString,"Rem3",v.DataView.APS!dvAPS(2).Rem_Hrs3!FieldValString,"Rem4",v.DataView.APS!dvAPS(3).Rem_Hrs3!FieldValString)
+			
+		f.Intrinsic.Control.ElseIf(v.DataView.APS!dvAPS.RowCount,=,5)
+			F.data.dataTable.SetValue("dtKA",v.Local.iCnt,"seqRes",v.Local.sMaterial,"Col1",v.DataView.APS!dvAPS(0).SR!FieldValTrim,"Col2",v.DataView.APS!dvAPS(1).SR!FieldValTrim,"Col3",v.DataView.APS!dvAPS(2).SR!FieldValTrim,"Col4",v.DataView.APS!dvAPS(3).SR!FieldValTrim,"Col5",v.DataView.APS!dvAPS(4).SR!FieldValTrim,"Rem1",v.DataView.APS!dvAPS(0).Rem_Hrs3!FieldValString,"Rem2",v.DataView.APS!dvAPS(1).Rem_Hrs3!FieldValString,"Rem3",v.DataView.APS!dvAPS(2).Rem_Hrs3!FieldValString,"Rem4",v.DataView.APS!dvAPS(3).Rem_Hrs3!FieldValString,"Rem5",v.DataView.APS!dvAPS(4).Rem_Hrs3!FieldValString)
+			
+		f.Intrinsic.Control.ElseIf(v.DataView.APS!dvAPS.RowCount,=,6)
+			F.data.dataTable.SetValue("dtKA",v.Local.iCnt,"seqRes",v.Local.sMaterial,"Col1",v.DataView.APS!dvAPS(0).SR!FieldValTrim,"Col2",v.DataView.APS!dvAPS(1).SR!FieldValTrim,"Col3",v.DataView.APS!dvAPS(2).SR!FieldValTrim,"Col4",v.DataView.APS!dvAPS(3).SR!FieldValTrim,"Col5",v.DataView.APS!dvAPS(4).SR!FieldValTrim,"Col6",v.DataView.APS!dvAPS(5).SR!FieldValTrim,"Rem1",v.DataView.APS!dvAPS(0).Rem_Hrs3!FieldValString,"Rem2",v.DataView.APS!dvAPS(1).Rem_Hrs3!FieldValString,"Rem3",v.DataView.APS!dvAPS(2).Rem_Hrs3!FieldValString,"Rem4",v.DataView.APS!dvAPS(3).Rem_Hrs3!FieldValString,"Rem5",v.DataView.APS!dvAPS(4).Rem_Hrs3!FieldValString,"Rem6",v.DataView.APS!dvAPS(5).Rem_Hrs3!FieldValString)
+			
+		f.Intrinsic.Control.ElseIf(v.DataView.APS!dvAPS.RowCount,=,7)
+			F.data.dataTable.SetValue("dtKA",v.Local.iCnt,"seqRes",v.Local.sMaterial,"Col1",v.DataView.APS!dvAPS(0).SR!FieldValTrim,"Col2",v.DataView.APS!dvAPS(1).SR!FieldValTrim,"Col3",v.DataView.APS!dvAPS(2).SR!FieldValTrim,"Col4",v.DataView.APS!dvAPS(3).SR!FieldValTrim,"Col5",v.DataView.APS!dvAPS(4).SR!FieldValTrim,"Col6",v.DataView.APS!dvAPS(5).SR!FieldValTrim,"Col7",v.DataView.APS!dvAPS(6).SR!FieldValTrim,"Rem1",v.DataView.APS!dvAPS(0).Rem_Hrs3!FieldValString,"Rem2",v.DataView.APS!dvAPS(1).Rem_Hrs3!FieldValString,"Rem3",v.DataView.APS!dvAPS(2).Rem_Hrs3!FieldValString,"Rem4",v.DataView.APS!dvAPS(3).Rem_Hrs3!FieldValString,"Rem5",v.DataView.APS!dvAPS(4).Rem_Hrs3!FieldValString,"Rem6",v.DataView.APS!dvAPS(5).Rem_Hrs3!FieldValString,"Rem7",v.DataView.APS!dvAPS(6).Rem_Hrs3!FieldValString)
+			
+		f.Intrinsic.Control.ElseIf(v.DataView.APS!dvAPS.RowCount,=,8)
+			F.data.dataTable.SetValue("dtKA",v.Local.iCnt,"seqRes",v.Local.sMaterial,"Col1",v.DataView.APS!dvAPS(0).SR!FieldValTrim,"Col2",v.DataView.APS!dvAPS(1).SR!FieldValTrim,"Col3",v.DataView.APS!dvAPS(2).SR!FieldValTrim,"Col4",v.DataView.APS!dvAPS(3).SR!FieldValTrim,"Col5",v.DataView.APS!dvAPS(4).SR!FieldValTrim,"Col6",v.DataView.APS!dvAPS(5).SR!FieldValTrim,"Col7",v.DataView.APS!dvAPS(6).SR!FieldValTrim,"Col8",v.DataView.APS!dvAPS(7).SR!FieldValTrim,"Rem1",v.DataView.APS!dvAPS(0).Rem_Hrs3!FieldValString,"Rem2",v.DataView.APS!dvAPS(1).Rem_Hrs3!FieldValString,"Rem3",v.DataView.APS!dvAPS(2).Rem_Hrs3!FieldValString,"Rem4",v.DataView.APS!dvAPS(3).Rem_Hrs3!FieldValString,"Rem5",v.DataView.APS!dvAPS(4).Rem_Hrs3!FieldValString,"Rem6",v.DataView.APS!dvAPS(5).Rem_Hrs3!FieldValString,"Rem7",v.DataView.APS!dvAPS(6).Rem_Hrs3!FieldValString,"Rem8",v.DataView.APS!dvAPS(7).Rem_Hrs3!FieldValString)
+			
+		f.Intrinsic.Control.ElseIf(v.DataView.APS!dvAPS.RowCount,=,9)
+			F.data.dataTable.SetValue("dtKA",v.Local.iCnt,"seqRes",v.Local.sMaterial,"Col1",v.DataView.APS!dvAPS(0).SR!FieldValTrim,"Col2",v.DataView.APS!dvAPS(1).SR!FieldValTrim,"Col3",v.DataView.APS!dvAPS(2).SR!FieldValTrim,"Col4",v.DataView.APS!dvAPS(3).SR!FieldValTrim,"Col5",v.DataView.APS!dvAPS(4).SR!FieldValTrim,"Col6",v.DataView.APS!dvAPS(5).SR!FieldValTrim,"Col7",v.DataView.APS!dvAPS(6).SR!FieldValTrim,"Col8",v.DataView.APS!dvAPS(7).SR!FieldValTrim,"Col9",v.DataView.APS!dvAPS(8).SR!FieldValTrim,"Rem1",v.DataView.APS!dvAPS(0).Rem_Hrs3!FieldValString,"Rem2",v.DataView.APS!dvAPS(1).Rem_Hrs3!FieldValString,"Rem3",v.DataView.APS!dvAPS(2).Rem_Hrs3!FieldValString,"Rem4",v.DataView.APS!dvAPS(3).Rem_Hrs3!FieldValString,"Rem5",v.DataView.APS!dvAPS(4).Rem_Hrs3!FieldValString,"Rem6",v.DataView.APS!dvAPS(5).Rem_Hrs3!FieldValString,"Rem7",v.DataView.APS!dvAPS(6).Rem_Hrs3!FieldValString,"Rem8",v.DataView.APS!dvAPS(7).Rem_Hrs3!FieldValString,"Rem9",v.DataView.APS!dvAPS(8).Rem_Hrs3!FieldValString)
+			
+		f.Intrinsic.Control.ElseIf(v.DataView.APS!dvAPS.RowCount,=,10)
+			F.data.dataTable.SetValue("dtKA",v.Local.iCnt,"seqRes",v.Local.sMaterial,"Col1",v.DataView.APS!dvAPS(0).SR!FieldValTrim,"Col2",v.DataView.APS!dvAPS(1).SR!FieldValTrim,"Col3",v.DataView.APS!dvAPS(2).SR!FieldValTrim,"Col4",v.DataView.APS!dvAPS(3).SR!FieldValTrim,"Col5",v.DataView.APS!dvAPS(4).SR!FieldValTrim,"Col6",v.DataView.APS!dvAPS(5).SR!FieldValTrim,"Col7",v.DataView.APS!dvAPS(6).SR!FieldValTrim,"Col8",v.DataView.APS!dvAPS(7).SR!FieldValTrim,"Col9",v.DataView.APS!dvAPS(8).SR!FieldValTrim,"Col10",v.DataView.APS!dvAPS(9).SR!FieldValTrim,"Rem1",v.DataView.APS!dvAPS(0).Rem_Hrs3!FieldValString,"Rem2",v.DataView.APS!dvAPS(1).Rem_Hrs3!FieldValString,"Rem3",v.DataView.APS!dvAPS(2).Rem_Hrs3!FieldValString,"Rem4",v.DataView.APS!dvAPS(3).Rem_Hrs3!FieldValString,"Rem5",v.DataView.APS!dvAPS(4).Rem_Hrs3!FieldValString,"Rem6",v.DataView.APS!dvAPS(5).Rem_Hrs3!FieldValString,"Rem7",v.DataView.APS!dvAPS(6).Rem_Hrs3!FieldValString,"Rem8",v.DataView.APS!dvAPS(7).Rem_Hrs3!FieldValString,"Rem9",v.DataView.APS!dvAPS(8).Rem_Hrs3!FieldValString,"Rem10",v.DataView.APS!dvAPS(9).Rem_Hrs3!FieldValString)
+			
+		f.Intrinsic.Control.ElseIf(v.DataView.APS!dvAPS.RowCount,=,11)
+			F.data.dataTable.SetValue("dtKA",v.Local.iCnt,"seqRes",v.Local.sMaterial,"Col1",v.DataView.APS!dvAPS(0).SR!FieldValTrim,"Col2",v.DataView.APS!dvAPS(1).SR!FieldValTrim,"Col3",v.DataView.APS!dvAPS(2).SR!FieldValTrim,"Col4",v.DataView.APS!dvAPS(3).SR!FieldValTrim,"Col5",v.DataView.APS!dvAPS(4).SR!FieldValTrim,"Col6",v.DataView.APS!dvAPS(5).SR!FieldValTrim,"Col7",v.DataView.APS!dvAPS(6).SR!FieldValTrim,"Col8",v.DataView.APS!dvAPS(7).SR!FieldValTrim,"Col9",v.DataView.APS!dvAPS(8).SR!FieldValTrim,"Col10",v.DataView.APS!dvAPS(9).SR!FieldValTrim,"Col11",v.DataView.APS!dvAPS(10).SR!FieldValTrim,"Rem1",v.DataView.APS!dvAPS(0).Rem_Hrs3!FieldValString,"Rem2",v.DataView.APS!dvAPS(1).Rem_Hrs3!FieldValString,"Rem3",v.DataView.APS!dvAPS(2).Rem_Hrs3!FieldValString,"Rem4",v.DataView.APS!dvAPS(3).Rem_Hrs3!FieldValString,"Rem5",v.DataView.APS!dvAPS(4).Rem_Hrs3!FieldValString,"Rem6",v.DataView.APS!dvAPS(5).Rem_Hrs3!FieldValString,"Rem7",v.DataView.APS!dvAPS(6).Rem_Hrs3!FieldValString,"Rem8",v.DataView.APS!dvAPS(7).Rem_Hrs3!FieldValString,"Rem9",v.DataView.APS!dvAPS(8).Rem_Hrs3!FieldValString,"Rem10",v.DataView.APS!dvAPS(9).Rem_Hrs3!FieldValString,"Rem11",v.DataView.APS!dvAPS(10).Rem_Hrs3!FieldValString)
+			
+		f.Intrinsic.Control.ElseIf(v.DataView.APS!dvAPS.RowCount,=,12)
+			F.data.dataTable.SetValue("dtKA",v.Local.iCnt,"seqRes",v.Local.sMaterial,"Col1",v.DataView.APS!dvAPS(0).SR!FieldValTrim,"Col2",v.DataView.APS!dvAPS(1).SR!FieldValTrim,"Col3",v.DataView.APS!dvAPS(2).SR!FieldValTrim,"Col4",v.DataView.APS!dvAPS(3).SR!FieldValTrim,"Col5",v.DataView.APS!dvAPS(4).SR!FieldValTrim,"Col6",v.DataView.APS!dvAPS(5).SR!FieldValTrim,"Col7",v.DataView.APS!dvAPS(6).SR!FieldValTrim,"Col8",v.DataView.APS!dvAPS(7).SR!FieldValTrim,"Col9",v.DataView.APS!dvAPS(8).SR!FieldValTrim,"Col10",v.DataView.APS!dvAPS(9).SR!FieldValTrim,"Col11",v.DataView.APS!dvAPS(10).SR!FieldValTrim,"Col12",v.DataView.APS!dvAPS(11).SR!FieldValTrim,"Rem1",v.DataView.APS!dvAPS(0).Rem_Hrs3!FieldValString,"Rem2",v.DataView.APS!dvAPS(1).Rem_Hrs3!FieldValString,"Rem3",v.DataView.APS!dvAPS(2).Rem_Hrs3!FieldValString,"Rem4",v.DataView.APS!dvAPS(3).Rem_Hrs3!FieldValString,"Rem5",v.DataView.APS!dvAPS(4).Rem_Hrs3!FieldValString,"Rem6",v.DataView.APS!dvAPS(5).Rem_Hrs3!FieldValString,"Rem7",v.DataView.APS!dvAPS(6).Rem_Hrs3!FieldValString,"Rem8",v.DataView.APS!dvAPS(7).Rem_Hrs3!FieldValString,"Rem9",v.DataView.APS!dvAPS(8).Rem_Hrs3!FieldValString,"Rem10",v.DataView.APS!dvAPS(9).Rem_Hrs3!FieldValString,"Rem11",v.DataView.APS!dvAPS(10).Rem_Hrs3!FieldValString,"Rem12",v.DataView.APS!dvAPS(11).Rem_Hrs3!FieldValString)
+		
+		f.Intrinsic.Control.ElseIf(v.DataView.APS!dvAPS.RowCount,=,13)
+			F.data.dataTable.SetValue("dtKA",v.Local.iCnt,"seqRes",v.Local.sMaterial,"Col1",v.DataView.APS!dvAPS(0).SR!FieldValTrim,"Col2",v.DataView.APS!dvAPS(1).SR!FieldValTrim,"Col3",v.DataView.APS!dvAPS(2).SR!FieldValTrim,"Col4",v.DataView.APS!dvAPS(3).SR!FieldValTrim,"Col5",v.DataView.APS!dvAPS(4).SR!FieldValTrim,"Col6",v.DataView.APS!dvAPS(5).SR!FieldValTrim,"Col7",v.DataView.APS!dvAPS(6).SR!FieldValTrim,"Col8",v.DataView.APS!dvAPS(7).SR!FieldValTrim,"Col9",v.DataView.APS!dvAPS(8).SR!FieldValTrim,"Col10",v.DataView.APS!dvAPS(9).SR!FieldValTrim,"Col11",v.DataView.APS!dvAPS(10).SR!FieldValTrim,"Col12",v.DataView.APS!dvAPS(11).SR!FieldValTrim,"Col13",v.DataView.APS!dvAPS(12).SR!FieldValTrim,"Rem1",v.DataView.APS!dvAPS(0).Rem_Hrs3!FieldValString,"Rem2",v.DataView.APS!dvAPS(1).Rem_Hrs3!FieldValString,"Rem3",v.DataView.APS!dvAPS(2).Rem_Hrs3!FieldValString,"Rem4",v.DataView.APS!dvAPS(3).Rem_Hrs3!FieldValString,"Rem5",v.DataView.APS!dvAPS(4).Rem_Hrs3!FieldValString,"Rem6",v.DataView.APS!dvAPS(5).Rem_Hrs3!FieldValString,"Rem7",v.DataView.APS!dvAPS(6).Rem_Hrs3!FieldValString,"Rem8",v.DataView.APS!dvAPS(7).Rem_Hrs3!FieldValString,"Rem9",v.DataView.APS!dvAPS(8).Rem_Hrs3!FieldValString,"Rem10",v.DataView.APS!dvAPS(9).Rem_Hrs3!FieldValString,"Rem11",v.DataView.APS!dvAPS(10).Rem_Hrs3!FieldValString,"Rem12",v.DataView.APS!dvAPS(11).Rem_Hrs3!FieldValString,"Rem13",v.DataView.APS!dvAPS(12).Rem_Hrs3!FieldValString)
+			
+		f.Intrinsic.Control.ElseIf(v.DataView.APS!dvAPS.RowCount,=,14)
+			F.data.dataTable.SetValue("dtKA",v.Local.iCnt,"seqRes",v.Local.sMaterial,"Col1",v.DataView.APS!dvAPS(0).SR!FieldValTrim,"Col2",v.DataView.APS!dvAPS(1).SR!FieldValTrim,"Col3",v.DataView.APS!dvAPS(2).SR!FieldValTrim,"Col4",v.DataView.APS!dvAPS(3).SR!FieldValTrim,"Col5",v.DataView.APS!dvAPS(4).SR!FieldValTrim,"Col6",v.DataView.APS!dvAPS(5).SR!FieldValTrim,"Col7",v.DataView.APS!dvAPS(6).SR!FieldValTrim,"Col8",v.DataView.APS!dvAPS(7).SR!FieldValTrim,"Col9",v.DataView.APS!dvAPS(8).SR!FieldValTrim,"Col10",v.DataView.APS!dvAPS(9).SR!FieldValTrim,"Col11",v.DataView.APS!dvAPS(10).SR!FieldValTrim,"Col12",v.DataView.APS!dvAPS(11).SR!FieldValTrim,"Col13",v.DataView.APS!dvAPS(12).SR!FieldValTrim,"Col14",v.DataView.APS!dvAPS(13).SR!FieldValTrim,"Rem1",v.DataView.APS!dvAPS(0).Rem_Hrs3!FieldValString,"Rem2",v.DataView.APS!dvAPS(1).Rem_Hrs3!FieldValString,"Rem3",v.DataView.APS!dvAPS(2).Rem_Hrs3!FieldValString,"Rem4",v.DataView.APS!dvAPS(3).Rem_Hrs3!FieldValString,"Rem5",v.DataView.APS!dvAPS(4).Rem_Hrs3!FieldValString,"Rem6",v.DataView.APS!dvAPS(5).Rem_Hrs3!FieldValString,"Rem7",v.DataView.APS!dvAPS(6).Rem_Hrs3!FieldValString,"Rem8",v.DataView.APS!dvAPS(7).Rem_Hrs3!FieldValString,"Rem9",v.DataView.APS!dvAPS(8).Rem_Hrs3!FieldValString,"Rem10",v.DataView.APS!dvAPS(9).Rem_Hrs3!FieldValString,"Rem11",v.DataView.APS!dvAPS(10).Rem_Hrs3!FieldValString,"Rem12",v.DataView.APS!dvAPS(11).Rem_Hrs3!FieldValString,"Rem13",v.DataView.APS!dvAPS(12).Rem_Hrs3!FieldValString,"Rem14",v.DataView.APS!dvAPS(13).Rem_Hrs3!FieldValString)
+			
+		f.Intrinsic.Control.ElseIf(v.DataView.APS!dvAPS.RowCount,>=,15)
+			F.data.dataTable.SetValue("dtKA",v.Local.iCnt,"seqRes",v.Local.sMaterial,"Col1",v.DataView.APS!dvAPS(0).SR!FieldValTrim,"Col2",v.DataView.APS!dvAPS(1).SR!FieldValTrim,"Col3",v.DataView.APS!dvAPS(2).SR!FieldValTrim,"Col4",v.DataView.APS!dvAPS(3).SR!FieldValTrim,"Col5",v.DataView.APS!dvAPS(4).SR!FieldValTrim,"Col6",v.DataView.APS!dvAPS(5).SR!FieldValTrim,"Col7",v.DataView.APS!dvAPS(6).SR!FieldValTrim,"Col8",v.DataView.APS!dvAPS(7).SR!FieldValTrim,"Col9",v.DataView.APS!dvAPS(8).SR!FieldValTrim,"Col10",v.DataView.APS!dvAPS(9).SR!FieldValTrim,"Col11",v.DataView.APS!dvAPS(10).SR!FieldValTrim,"Col12",v.DataView.APS!dvAPS(11).SR!FieldValTrim,"Col13",v.DataView.APS!dvAPS(12).SR!FieldValTrim,"Col14",v.DataView.APS!dvAPS(13).SR!FieldValTrim,"Col15",v.DataView.APS!dvAPS(14).SR!FieldValTrim,"Rem1",v.DataView.APS!dvAPS(0).Rem_Hrs3!FieldValString,"Rem2",v.DataView.APS!dvAPS(1).Rem_Hrs3!FieldValString,"Rem3",v.DataView.APS!dvAPS(2).Rem_Hrs3!FieldValString,"Rem4",v.DataView.APS!dvAPS(3).Rem_Hrs3!FieldValString,"Rem5",v.DataView.APS!dvAPS(4).Rem_Hrs3!FieldValString,"Rem6",v.DataView.APS!dvAPS(5).Rem_Hrs3!FieldValString,"Rem7",v.DataView.APS!dvAPS(6).Rem_Hrs3!FieldValString,"Rem8",v.DataView.APS!dvAPS(7).Rem_Hrs3!FieldValString,"Rem9",v.DataView.APS!dvAPS(8).Rem_Hrs3!FieldValString,"Rem10",v.DataView.APS!dvAPS(9).Rem_Hrs3!FieldValString,"Rem11",v.DataView.APS!dvAPS(10).Rem_Hrs3!FieldValString,"Rem12",v.DataView.APS!dvAPS(11).Rem_Hrs3!FieldValString,"Rem13",v.DataView.APS!dvAPS(12).Rem_Hrs3!FieldValString,"Rem14",v.DataView.APS!dvAPS(13).Rem_Hrs3!FieldValString,"Rem15",v.DataView.APS!dvAPS(14).Rem_Hrs3!FieldValString)
+		f.Intrinsic.Control.EndIf
+		
+		'BP - SeqType2 for bIssue
+		V.Local.bIssued.Set(True)
+		f.Intrinsic.String.Build("Job = '{0}' and Sfx = '{1}' and SeqRes = '{2}'",v.datatable.dtKA(v.Local.iCnt).JOB!fieldValString,V.datatable.dtKA(v.Local.iCnt).SUFFIX!fieldvalString,V.datatable.dtKA(v.Local.iCnt).SeqRes!fieldvalString,v.Local.sFilter)
+		f.Data.DataView.SetFilter("SeqType2","dvSeqType2",v.Local.sFilter)
+		'if there is something in the dv, meaning completion date is blank --> not issued yet
+		f.Intrinsic.Control.If(v.DataView.SeqType2!dvSeqType2.RowCount,>,0)
+			v.Local.bIssued.Set(False)
+		f.Intrinsic.Control.EndIf
+		f.Data.Datatable.SetValue("dtKA",v.Local.iCnt,"ISSUED",v.Local.bIssued)
+		
+		'BP - check for Ready
+		f.Intrinsic.Control.CallSub("Mat_Ready","Part",V.datatable.dtKA(v.Local.iCnt).seqRes!fieldvalString,"Location",V.datatable.dtKA(v.Local.iCnt).LOCATION!fieldvalString,"Job",v.datatable.dtKA(v.Local.iCnt).JOB!fieldValString,"Suffix",V.datatable.dtKA(v.Local.iCnt).SUFFIX!fieldvalString)
+		F.Data.Datatable.SetValue("dtKA",V.Local.iCnt,"READY",v.Args.sReady)
+		
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+
+	f.Data.Datatable.RemoveColumn("dtKA","IND_FLAG")
+	f.Data.Datatable.RemoveColumn("dtKA","FullAllocated")
+	f.Data.Datatable.RemoveColumn("dtKA","DATE_START")
+	f.Data.Datatable.RemoveColumn("dtKA","CODE_SOURCE")
+	'f.Data.Datatable.RemoveColumn("dtKA","ACTIVE_OPS")
+	f.Data.Datatable.RemoveColumn("dtKA","PCSREMAIN")
+	f.Data.Datatable.RemoveColumn("dtKA","SEQ_ACTIVE")
+
+	
+	'f.Data.DataTable.AddExpressionColumn("dtKA","TotalRemHrs","Long","Rem1 + Rem2 + Rem3 + Rem4 + Rem5 + Rem6 + Rem7 + Rem8 + Rem9 + Rem10 + Rem11 + Rem12 + Rem13 + Rem14 + Rem15")	
+	Gui.FrmKA.GsGCKA.AddGridviewFromDatatable("gvKA","dtKA")
+	F.Intrinsic.Control.CallSub("loadgvka","sControl","GsGCKA","sGV","gvKA","dt","dtKA")
+	Gui.FrmKA.GsGCKA.MainView("gvKA")
+	
+	'Past Due
+	f.Intrinsic.String.Build("Date_Due <= #{0}#",v.Ambient.Date.FormatMM/DD/YYYY,v.Local.sFilter)
+	F.Data.DataView.Create("dtKA","dvKAPastDue",22,v.Local.sFilter,"")
+	f.Intrinsic.Control.If(v.DataTable.dtDue.Exists)
+		f.Data.DataTable.Close("dtDue")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataView.ToDataTable("dtKA","dvKAPastDue","dtDue",True)
+	gui.FrmKA.gsDue.AddGridviewFromDataTable("gvDue","dtDue")
+	F.Intrinsic.Control.CallSub("loadgvka","sControl","gsDue","sGV","gvDue","dt","dtDue")
+	gui.FrmKA.gsDue.MainView("gvDue")
+	
+	V.Global.bLoadData.Set(True)
+	
+F.Intrinsic.Control.Catch
+	'f.Intrinsic.UI.Msgbox(v.Local.iCnt)
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.loaddtdvKA.End
+
+Program.Sub.loadGVKA.Start
+F.Intrinsic.Control.Try
+	v.Local.iCnt.Declare
+	v.Local.iNum.Declare
+	v.Local.sTemp.Declare
+	v.Local.iCol.Declare
+	v.Local.iCycle.Declare
+	V.Local.sRegistry.Declare
+	v.Local.sControl.Declare
+	v.Local.sGV.Declare
+	v.Local.sRet.Declare
+	v.Local.sUserField.Declare
+	v.Local.iIndexRet.Declare
+	v.Local.bEditWO.Declare	
+	v.Local.sVisibleIndex.Declare
+	v.Local.sCol.Declare
+	
+	v.Local.sControl.Set(v.Args.sControl)
+	v.Local.sGV.Set(v.Args.sGV)	
+	
+	Gui.FrmKA.[v.local.sControl].SetGridViewProperty(v.local.sGV,"MultiSelect",True)
+	Gui.FrmKA.[v.local.sControl].SetGridViewProperty(v.local.sGV,"AllowSort",True)
+	Gui.FrmKA.[v.local.sControl].SetGridViewProperty(v.local.sGV,"AllowFilter",True)
+	Gui.FrmKA.[v.local.sControl].SetGridViewProperty(v.local.sGV,"OptionsDetailShowDetailTabs",False)
+	Gui.FrmKA.[v.local.sControl].SetGridViewProperty(v.local.sGV,"OptionsViewShowGroupPanel",True)
+	Gui.FrmKA.[v.local.sControl].SetGridViewProperty(v.local.sGV,"EnableAppearanceOddRow",True)	
+	Gui.FrmKA.[v.local.sControl].SetGridViewProperty(v.local.sGV,"OptionsViewColumnAutoWidth",False)
+	Gui.FrmKA.[v.local.sControl].SetGridViewProperty(v.local.sGV,"OptionsFindAlwaysVisible",True)
+	Gui.FrmKA.[v.local.sControl].SetGridViewProperty(v.local.sGV,"OptionsViewShowAutoFilterRow",True)
+	Gui.FrmKA.[v.local.sControl].SetGridViewProperty(v.local.sGV,"ColumnPanelRowHeight","35")
+	Gui.FrmKA.[v.Local.sControl].SetGridViewProperty(v.local.sGV,v.Enum.GridViewPropertyNames!SuppressNothingDates, True)	
+	
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"ACTIVE_OPS","Visible","False")
+	
+	
+	'Visible Index
+	v.Local.sVisibleIndex.Set("Name_Customer,Job,Suffix,Date_Due,ComplDate,Part,Location,Product_Line,PL_DESC,Description,Priority,OnHold,seqRes,QTY_LEFT,READY,ISSUED,Col1,Rem1,Col2,Rem2,Col3,Rem3,Col4,Rem4,Col5,Rem5,Col6,Rem6,Col7,Rem7,Col8,Rem8,Col9,Rem9,Col10,Rem10,Col11,Rem11,Col12,Rem12,Col13,Rem13,Col14,Rem14,Col15,Rem15,Notes,DATE_ORIG_DUE,Parent_WO,JBSF,Parent_Suffix_Parent,QTY_ORDER,QTY_CUSTOMER,ACTIVE_OPS")
+	f.Intrinsic.String.Split(v.Local.sVisibleIndex,",",v.Local.sCol)
+
+
+	f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sCol.UBound,1)
+		Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,v.Local.sCol(v.Local.iCnt),"VisibleIndex",v.Local.iCnt)
+		Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,v.Local.sCol(v.Local.iCnt),"HeaderFontBold",True)
+		Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,v.Local.sCol(v.Local.iCnt),"HeaderWordWrap","Wrap")
+		Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,v.Local.sCol(v.Local.iCnt),"HeaderVAlignment","Top")
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"PARENT_WO","VISIBLE",False)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"PARENT_SUFFIX_PARENT","VISIBLE",False)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"JBSF","VISIBLE",False)	
+	
+	'Fixed left
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Name_Customer","fixed","left")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Job","fixed","left")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Suffix","fixed","left")	
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Part","fixed","left")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Date_Due","fixed","left")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"ComplDate","fixed","left")
+
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Name_Customer","Caption","Customer Name")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"JOB","Caption","Job")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"SUFFIX","Caption","Suf.")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"PRODUCT_LINE","Caption","PL")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"PRIORITY","Caption","Priority")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"PART","Caption","Part")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"DESCRIPTION","Caption","Customer Part")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"QTY_LEFT","Caption","Qty Rem")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"DATE_DUE","Caption","WO Due Dt")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"ComplDate","Caption","Sched. Completion Dt")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col1","Caption","Op1")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col2","Caption","Op2")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col3","Caption","Op3")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col4","Caption","Op4")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col5","Caption","Op5")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col6","Caption","Op6")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col7","Caption","Op7")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col8","Caption","Op8")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col9","Caption","Op9")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col10","Caption","Op10")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col11","Caption","Op11")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col12","Caption","Op12")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col13","Caption","Op13")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col14","Caption","Op14")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col15","Caption","Op15")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem1","Caption","Op1 Rem Hrs")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem2","Caption","Op2 Rem Hrs")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem3","Caption","Op3 Rem Hrs")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem4","Caption","Op4 Rem Hrs")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem5","Caption","Op5 Finalize Hrs")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem6","Caption","Op6 Rem Hrs")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem7","Caption","Op7 Rem Hrs")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem8","Caption","Op8 Rem Hrs")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem9","Caption","Op9 Rem Hrs")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem10","Caption","Op10 Rem Hrs")	
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem12","Caption","Op12 Rem Hrs")	
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem13","Caption","Op13 Rem Hrs")	
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem14","Caption","Op14 Rem Hrs")	
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem15","Caption","Op15 Rem Hrs")	
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem11","Caption","Op11 Rem Hrs")	
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"seqRes","Caption","1st Material")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"NOTES","Caption","Notes")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Location","Caption","Locn")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"DATE_ORIG_DUE","Caption","Orig Due Date")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"QTY_ORDER","Caption","Run Qty")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"QTY_CUSTOMER","Caption","Customer Qty")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"PL_DESC","Caption","PL Desc.")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"READY","Caption","Ready")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"ISSUED","Caption","Issued")
+	
+	'Allow Edit WO
+	Function.Global.Security.CheckUserAccessIPM(527,1,v.Local.bEditWO)
+		
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"NAME_CUSTOMER","MinWidth","120")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"JOB","MinWidth","47")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"SUFFIX","MinWidth","27")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"PRODUCT_LINE","MinWidth","27")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"PRIORITY","MinWidth","27")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"OnHold","MinWidth","27")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"PART","MinWidth","120")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"DESCRIPTION","MinWidth","120")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"QTY_LEFT","MinWidth","75")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"DATE_DUE","MinWidth","71")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"ComplDate","MinWidth","71")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Date_Orig_Due","MinWidth","71")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col1","MinWidth","80")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col2","MinWidth","80")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col3","MinWidth","80")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col4","MinWidth","80")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col5","MinWidth","80")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col6","MinWidth","80")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col7","MinWidth","80")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col8","MinWidth","80")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col9","MinWidth","80")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col10","MinWidth","80")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem1","MinWidth","30")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem2","MinWidth","30")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem3","MinWidth","30")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem4","MinWidth","30")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem5","MinWidth","30")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem6","MinWidth","30")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem7","MinWidth","30")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem8","MinWidth","30")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem9","MinWidth","30")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem10","MinWidth","30")	
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"seqRes","MinWidth","80")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"NOTES","MinWidth","120")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"QTY_ORDER","MinWidth","90")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"QTY_CUSTOMER","MinWidth","90")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"PL_DESC","MinWidth","120")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"READY","MinWidth","80")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"ISSUED","MinWidth","80")
+
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"JOB","HEADERHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"SUFFIX","HEADERHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"PRODUCT_LINE","HEADERHALIGNMENT","Center")	
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"PRIORITY","HEADERHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"OnHold","HEADERHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"QTY_LEFT","HEADERHALIGNMENT","far")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"DATE_DUE","HEADERHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"ComplDate","HEADERHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col1","HEADERHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col2","HEADERHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col3","HEADERHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col4","HEADERHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col5","HEADERHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col6","HEADERHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col7","HEADERHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col8","HEADERHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col9","HEADERHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col10","HEADERHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Location","HEADERHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"QTY_ORDER","HEADERHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"QTY_CUSTOMER","HEADERHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"PL_DESC","HEADERHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"READY","HEADERHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"ISSUED","HEADERHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem1","HEADERHALIGNMENT","far")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem2","HEADERHALIGNMENT","far")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem3","HEADERHALIGNMENT","far")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem4","HEADERHALIGNMENT","far")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem5","HEADERHALIGNMENT","far")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem6","HEADERHALIGNMENT","far")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem7","HEADERHALIGNMENT","far")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem8","HEADERHALIGNMENT","far")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem9","HEADERHALIGNMENT","far")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Rem10","HEADERHALIGNMENT","far")
+
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Date_Orig_Due","HEADERHALIGNMENT","Center")
+	
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"JOB","CELLHALIGNMENT","CENTER")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"SUFFIX","CELLHALIGNMENT","CENTER")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"QTY_LEFT","CELLHALIGNMENT","far")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"DATE_DUE","CELLHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"ComplDate","CELLHALIGNMENT","Center")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Priority","CELLHALIGNMENT","CENTER")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"PRODUCT_LINE","CELLHALIGNMENT","CENTER")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Location","CELLHALIGNMENT","CENTER")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Date_Orig_Due","CELLHALIGNMENT","CENTER")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"READY","CELLHALIGNMENT","CENTER")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"ISSUED","CELLHALIGNMENT","CENTER")
+	
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"JOB","CellForeColor","Blue")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"SUFFIX","CellForeColor","Blue")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"PART","CellForeColor","Blue")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"seqRes","CellForeColor","Blue")
+	
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"NOTES","CellBackColor","LightYellow")
+	
+	Gui.FrmKA.[v.local.sControl].setColumnProperty(v.local.sGV,"NOTES","READONLY",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"NAME_cUSTOMER","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"JOB","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"SUFFIX","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"PRODUCT_LINE","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"PRIORITY","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"PART","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"DESCRIPTION","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"QTY_LEFT","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"DATE_DUE","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"ComplDate","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col1","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col2","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col3","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col4","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col5","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col6","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col7","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col8","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col9","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col10","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col11","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col12","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col13","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col14","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Col15","AllowEdit",false)
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"seqRes","AllowEdit",false)	
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"PL_DESC","AllowEdit",false)	
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"READY","AllowEdit",false)	
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"ISSUED","AllowEdit",false)	
+	
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"DATE_DUE","DisplayCustomDatetime","d")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"ComplDate","DisplayCustomDatetime","d")
+	Gui.FrmKA.[v.local.sControl].setcolumnProperty(v.local.sGV,"Date_Orig_Due","DisplayCustomDatetime","d")
+	
+	Gui.FrmKA.[v.local.sControl].AddSummaryItem(v.Args.sGV,"Rem1","RemHrs1","Sum","","","n")
+	Gui.FrmKA.[v.local.sControl].AddSummaryItem(v.Args.sGV,"Rem2","RemHrs2","Sum","","","n")
+	Gui.FrmKA.[v.local.sControl].AddSummaryItem(v.Args.sGV,"Rem3","RemHrs3","Sum","","","n")
+	Gui.FrmKA.[v.local.sControl].AddSummaryItem(v.Args.sGV,"Rem4","RemHrs4","Sum","","","n")
+	Gui.FrmKA.[v.local.sControl].AddSummaryItem(v.Args.sGV,"Rem5","RemHrs5","Sum","","","n")
+	Gui.FrmKA.[v.local.sControl].AddSummaryItem(v.Args.sGV,"Rem6","RemHrs6","Sum","","","n")
+	Gui.FrmKA.[v.local.sControl].AddSummaryItem(v.Args.sGV,"Rem7","RemHrs7","Sum","","","n")
+	Gui.FrmKA.[v.local.sControl].AddSummaryItem(v.Args.sGV,"Rem8","RemHrs8","Sum","","","n")
+	Gui.FrmKA.[v.local.sControl].AddSummaryItem(v.Args.sGV,"Rem9","RemHrs9","Sum","","","n")
+	Gui.FrmKA.[v.local.sControl].AddSummaryItem(v.Args.sGV,"Rem10","RemHrs10","Sum","","","n")	
+	Gui.FrmKA.[v.local.sControl].AddSummaryItem(v.Args.sGV,"Rem11","RemHrs11","Sum","","","n")	
+	Gui.FrmKA.[v.local.sControl].AddSummaryItem(v.Args.sGV,"Rem12","RemHrs12","Sum","","","n")	
+	Gui.FrmKA.[v.local.sControl].AddSummaryItem(v.Args.sGV,"Rem13","RemHrs13","Sum","","","n")	
+	Gui.FrmKA.[v.local.sControl].AddSummaryItem(v.Args.sGV,"Rem14","RemHrs14","Sum","","","n")	
+	Gui.FrmKA.[v.local.sControl].AddSummaryItem(v.Args.sGV,"Rem15","RemHrs15","Sum","","","n")	
+	
+	Gui.FrmKA.[v.local.sControl].SetColumnProperty(v.local.sGV,"QTY_LEFT","DisplayCustomNumeric","#,###,##0")
+	Gui.FrmKA.[v.local.sControl].SetColumnProperty(v.local.sGV,"Rem1","DisplayCustomNumeric","#,###,###.00")
+	Gui.FrmKA.[v.local.sControl].SetColumnProperty(v.local.sGV,"Rem2","DisplayCustomNumeric","#,###,###.00")
+	Gui.FrmKA.[v.local.sControl].SetColumnProperty(v.local.sGV,"Rem3","DisplayCustomNumeric","#,###,###.00")
+	Gui.FrmKA.[v.local.sControl].SetColumnProperty(v.local.sGV,"Rem4","DisplayCustomNumeric","#,###,###.00")
+	Gui.FrmKA.[v.local.sControl].SetColumnProperty(v.local.sGV,"Rem5","DisplayCustomNumeric","#,###,###.00")
+	Gui.FrmKA.[v.local.sControl].SetColumnProperty(v.local.sGV,"Rem6","DisplayCustomNumeric","#,###,###.00")
+	Gui.FrmKA.[v.local.sControl].SetColumnProperty(v.local.sGV,"Rem7","DisplayCustomNumeric","#,###,###.00")
+	Gui.FrmKA.[v.local.sControl].SetColumnProperty(v.local.sGV,"Rem8","DisplayCustomNumeric","#,###,###.00")
+	Gui.FrmKA.[v.local.sControl].SetColumnProperty(v.local.sGV,"Rem9","DisplayCustomNumeric","#,###,###.00")
+	Gui.FrmKA.[v.local.sControl].SetColumnProperty(v.local.sGV,"Rem10","DisplayCustomNumeric","#,###,###.00")
+	Gui.FrmKA.[v.local.sControl].SetColumnProperty(v.local.sGV,"Rem11","DisplayCustomNumeric","#,###,###.00")
+	Gui.FrmKA.[v.local.sControl].SetColumnProperty(v.local.sGV,"Rem12","DisplayCustomNumeric","#,###,###.00")
+	Gui.FrmKA.[v.local.sControl].SetColumnProperty(v.local.sGV,"Rem13","DisplayCustomNumeric","#,###,###.00")
+	Gui.FrmKA.[v.local.sControl].SetColumnProperty(v.local.sGV,"Rem14","DisplayCustomNumeric","#,###,###.00")
+	Gui.FrmKA.[v.local.sControl].SetColumnProperty(v.local.sGV,"Rem15","DisplayCustomNumeric","#,###,###.00")
+	Gui.FrmKA.[v.local.sControl].SetColumnProperty(v.local.sGV,"QTY_ORDER","DisplayCustomNumeric","#,###,###.00")
+	Gui.FrmKA.[v.local.sControl].SetColumnProperty(v.local.sGV,"QTY_CUSTOMER","DisplayCustomNumeric","#,###,###.00")
+	
+	'Set column color based on Issued/Not Issued
+	gui.FrmKA.[v.local.sControl].AddStyleFormatCondition(v.local.sGV,"Issued","tagIssuedgvAll","equal","True")
+	gui.FrmKA.[v.local.sControl].SetStyleFormatConditionProperty(v.local.sGV,"Issued","tagIssuedgvAll","backcolor","Purple")
+	
+	f.Intrinsic.Control.CallSub("Color_Ready_And_FullAllocated","Control",v.local.sControl,"GV",v.local.sGV)
+	'Column Index Dictionary
+	f.Data.Dictionary.Create("ColIndex")	
+	f.Intrinsic.String.Split(V.DataTable.[v.Args.dt].FieldNames,"*!*",v.Local.sCol)
+	f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sCol.UBound,1)
+		f.Data.Dictionary.AddItem("ColIndex",v.Local.sCol(v.Local.iCnt),v.Local.iCnt)		
+	f.Intrinsic.Control.Next(v.Local.iCnt)	
+	f.Data.Dictionary.SetDefaultReturn("ColIndex",0)
+
+	v.Local.dDateDue.Declare
+	f.Intrinsic.Control.For(v.Local.iCnt,0,v.datatable.[v.Args.dt].rowCount--,1)
+		'Process the 15 columns
+		f.Intrinsic.Control.For(v.Local.iNum,1,15,1)
+			f.Intrinsic.String.Build("Col{0}",v.Local.iNum,v.Local.sCol)
+			f.Intrinsic.String.Left(v.DataTable.[v.Args.dt](v.Local.iCnt).[v.Local.sCol]!FieldValTrim,1,v.Local.sTemp)
+			f.Intrinsic.Control.If(v.Local.sTemp,=,"#")	
+				Gui.FrmKA.[v.local.sControl].setCellAppearance(v.local.sGV,v.Dictionary.ColIndex![v.Local.sCol],v.Local.iCnt,"FontStrikeOut",True)
+				Gui.FrmKA.[v.local.sControl].setCellAppearance(v.local.sGV,v.Dictionary.ColIndex![v.Local.sCol],v.Local.iCnt,"BackColor","Green")
+			f.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.If(v.Local.sTemp,=,"!")
+				Gui.FrmKA.[v.local.sControl].setCellAppearance(v.local.sGV,v.Dictionary.ColIndex![v.Local.sCol],v.Local.iCnt,"BackColor","Red")
+			f.Intrinsic.Control.EndIf			
+		f.Intrinsic.Control.Next(v.Local.iNum)
+		'Process the WO Date Due: Late => Red; Brown => On Hold
+		v.Local.dDateDue.Set(v.DataTable.[v.Args.dt](v.Local.iCnt).Date_Due!FieldValString)
+		f.Intrinsic.Control.If(v.Local.dDateDue,<,v.Ambient.Date)
+			Gui.FrmKA.[v.local.sControl].setCellAppearance(v.local.sGV,v.Dictionary.ColIndex!Date_Due,v.Local.iCnt,"BackColor","Red")
+		f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.If(v.DataTable.[v.Args.dt](v.Local.iCnt).OnHold!FieldValString,=,"True")
+			Gui.FrmKA.[v.local.sControl].setCellAppearance(v.local.sGV,v.Dictionary.ColIndex!Date_Due,v.Local.iCnt,"BackColor","DarkGray")
+		f.Intrinsic.Control.EndIf
+		'BP -active SEQ turn blue
+		f.Intrinsic.Control.If(v.DataTable.dtKA(v.Local.iCnt).ACTIVE_OPS!FieldValTrim,<>,"")
+			v.Local.sCol.Set(v.DataTable.dtKA(v.Local.iCnt).ACTIVE_OPS!FieldValTrim)
+			Gui.FrmKA.[v.local.sControl].setCellAppearance(v.local.sGV,v.Dictionary.ColIndex![v.Local.sCol],v.Local.iCnt,"BackColor","Blue")
+			Gui.FrmKA.[v.local.sControl].setCellAppearance(v.local.sGV,v.Dictionary.ColIndex![v.Local.sCol],v.Local.iCnt,"ForeColor","White")
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	f.Data.Dictionary.Close("ColIndex")
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.loadGVKA.End
+
+Program.Sub.GsGridControlKA_RowCellClick.Start
+F.Intrinsic.Control.Try
+	V.Local.sWO.Declare
+	V.Local.sSuffix.Declare
+	V.Local.sParams.Declare
+	v.Local.spart.declare
+	'jgp add
+	v.Local.sTemp.Declare
+	v.Local.sLoc.Declare
+	V.Local.bEdit.Declare
+	v.Local.bViewWONoDollars.Declare
+	v.Local.bMaintainWO.Declare
+	V.Local.sPath.Declare
+	V.Local.bExists.Declare
+
+	'Check View WO No Dollars
+	Function.Global.Security.CheckUserAccessIPM(606,0,v.Local.bViewWONoDollars)
+	Function.Global.Security.CheckUserAccessIPM(611,0,v.Local.bMaintainWO)
+	
+	F.Intrinsic.Control.SelectCase(v.Args.Column.UCase)
+
+	
+		F.Intrinsic.Control.CaseAny("SEQRES")
+			Gui.FrmKA.GsGCKA.GetCellValueByColumnName("gvKA","seqRes",v.Args.rowIndex,v.Local.sPart)
+			Gui.FrmKA.GsGCKA.GetCellValueByColumnName("gvKA","LOCATION",v.Args.rowIndex,v.Local.sLoc)
+			F.Intrinsic.String.Build("{0}bin\SupplyAndDemand.exe",V.Caller.LocalGSSTempDir,V.Local.sPath)
+			F.Intrinsic.File.Exists(V.Local.sPath,V.Local.bExists)
+			F.Intrinsic.Control.If(V.Local.bExists.Not)
+				F.Intrinsic.Task.SetEnvironmentVariable("PARTREVISION",V.Local.sPart)
+				F.Intrinsic.Task.SetEnvironmentVariable("LOCATIONCODE",V.Local.sLoc)
+				Gui.FrmKA..Enabled(False)
+				F.Intrinsic.Task.LaunchAsync(V.Local.sPath,1,V.Local.sPath)
+				Gui.FrmKA..Enabled(True)
+			F.Intrinsic.Control.Else
+				f.Intrinsic.String.Build("{0}!*!{1}!*!M",v.Local.sPart,v.Local.sLoc,v.Local.sParams)
+				F.Global.General.CallWrapperASync(300011,v.Local.sParams)
+			F.Intrinsic.Control.EndIf	
+				
+				
+		F.Intrinsic.Control.CaseAny("JOB","SUFFIX","PART")			
+			f.Intrinsic.Control.CallSub("LockScreen")
+			Gui.FrmKA.GsGCKA.GetCellValueByColumnName("gvKA","JOB",V.Args.rowIndex,v.Local.sWO)
+			Gui.FrmKA.GsGCKA.GetCellValueByColumnName("gvKA","SUFFIX",v.Args.rowIndex,v.Local.sSuffix)
+			Gui.FrmKA.GsGCKA.GetCellValueByColumnName("gvKA","PART",v.Args.rowIndex,v.Local.sPart)
+			Gui.FrmKA.GsGCKA.GetCellValueByColumnName("gvKA","LOCATION",v.Args.rowIndex,v.Local.sLoc)			
+			
+			'additions made for project 4564 if the PART column is selected launch the Supply and Demand screen
+			f.Intrinsic.Control.If(v.Args.column.UCase,=,"PART")		
+				F.Intrinsic.Control.If(v.Local.sPart,<>,"")
+					F.Intrinsic.Control.If(V.Screen.FrmKA!optView.Value,=,True)				
+						F.Intrinsic.String.ConcatCallWrapperArgs(V.Local.sPart,V.Local.sLoc,"O",V.Local.sParams)
+					F.Intrinsic.Control.Else
+						'Check Supply and Demand with Edit
+						Function.Global.Security.CheckUserAccessIPM(371,0,v.Local.bEdit)
+						f.Intrinsic.Control.If(v.Local.bEdit)
+							'Open Supply and Demand with Edit
+							F.Intrinsic.String.ConcatCallWrapperArgs(V.Local.sPart,V.Local.sLoc,"M",V.Local.sParams)
+						f.Intrinsic.Control.Else
+							'Open Supply and Demand
+							F.Intrinsic.String.ConcatCallWrapperArgs(V.Local.sPart,V.Local.sLoc,"O",V.Local.sParams)
+						f.Intrinsic.Control.EndIf					
+					F.Intrinsic.Control.EndIf
+					F.Global.General.CallWrapperSync(300011,V.Local.sParams)
+				F.Intrinsic.Control.EndIf			
+		
+			f.Intrinsic.Control.ElseIf(v.Args.column.UCase,=,"JOB",or,v.Args.column.UCase,=,"SUFFIX")	
+				
+				F.Intrinsic.Control.If(V.Local.sWO,<>,"")
+					'Edit
+					F.Intrinsic.Control.If(V.Screen.FrmKA!optEdit.Value,=,True)
+						Function.Global.Security.CheckUserAccessIPM(527,1,v.Local.bEdit)
+						f.Intrinsic.Control.If(v.Local.bEdit)
+							'Can Edit WO
+							F.Intrinsic.String.ConcatCallWrapperArgs(V.Local.sWO,V.Local.sSuffix,"O",V.Local.sParams)
+							F.Global.General.CallWrapperAsync(2009,V.Local.sParams)
+						f.Intrinsic.Control.Else
+							'View WO
+							f.Intrinsic.Control.If(v.Local.bViewWONoDollars)
+								'No Dollars
+								F.Intrinsic.String.ConcatCallWrapperArgs("Col8",V.Local.sWO,V.Local.sSuffix,"A",V.Local.sParams)
+								F.Global.General.CallWrapperAsync(450000,V.Local.sParams)
+							f.Intrinsic.Control.Else
+								'With dollars
+								F.Intrinsic.String.ConcatCallWrapperArgs("Col7",V.Local.sWO,V.Local.sSuffix,"A",V.Local.sParams)
+								F.Global.General.CallWrapperAsync(450000,V.Local.sParams)					
+							f.Intrinsic.Control.EndIf
+						f.Intrinsic.Control.EndIf	
+					
+					'Issue
+					F.Intrinsic.Control.ElseIf(V.Screen.FrmKA!optIssue.Value,=,True)								
+						F.Intrinsic.String.Build("{0}!*!{1}!*! !*! !*! !*! !*! ",V.Local.sWO,V.Local.sSuffix,V.Local.sParams)
+						F.Global.General.CallWrapperSync(450150,V.Local.sParams)
+						F.Intrinsic.Control.SelectCase(V.Global.iPrintAudit)
+							F.Intrinsic.Control.Case(1)
+								F.Global.General.CallWrapperSync(50,"JB0057")
+							'F.Intrinsic.Control.Case(2)
+								'Do Not Print Audit Trail
+							F.Intrinsic.Control.Case(3)
+								'Print Audit Trail
+								F.Global.General.CallWrapperSync(50,"JB0057")
+						F.Intrinsic.Control.EndSelect
+						
+					'Wip	
+					F.Intrinsic.Control.ElseIf(V.Screen.FrmKA!optWiptoFG.Value,=,True)
+						F.Intrinsic.String.Build("{0}!*!{1}!*!{2}!*!OS!*!!*!!*!!*!!*!!*!!*!{3}!*!{4}!*!16!*!03!*!02!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!",V.Caller.CompanyCode,V.Caller.Terminal,V.Caller.Caller,V.Local.sWO,V.Local.sSuffix,V.Local.sParams)
+						F.Global.General.CallWrapperSync(2003,V.Local.sParams)
+						F.Intrinsic.Control.SelectCase(V.Global.iPrintAudit)
+							F.Intrinsic.Control.Case(1)
+								F.Global.General.CallWrapperSync(50,"JB0057/C")
+							F.Intrinsic.Control.Case(2)
+								'Do Not Print
+							F.Intrinsic.Control.Case(3)
+								F.Global.General.CallWrapperSync(50,"JB0057/C")
+						F.Intrinsic.Control.EndSelect
+						
+					'View	
+					F.Intrinsic.Control.Else
+					
+						f.Intrinsic.Control.If(v.Local.bViewWONoDollars)
+							'No Dollars
+							F.Intrinsic.String.ConcatCallWrapperArgs("Col8",V.Local.sWO,V.Local.sSuffix,"A",V.Local.sParams)
+							F.Global.General.CallWrapperAsync(450000,V.Local.sParams)
+						f.Intrinsic.Control.Else
+							'With dollars
+							F.Intrinsic.String.ConcatCallWrapperArgs("Col7",V.Local.sWO,V.Local.sSuffix,"A",V.Local.sParams)
+							F.Global.General.CallWrapperAsync(450000,V.Local.sParams)					
+						f.Intrinsic.Control.EndIf
+
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.EndIf
+			
+			'End if Column = Job/Suffix/Part
+			F.Intrinsic.Control.EndIf				
+			
+'		'JGP added code to print work order and pick slip	
+'			F.Intrinsic.Control.Case("FLAG_WO_PRTD")				
+'				f.Intrinsic.Control.CallSub("LockScreen")
+'				'print WO
+'				Gui.FrmKA.GsGCKA.SetCellValueByColumnName("gvKA","FLAG_WO_PRTD",V.Args.RowIndex,True)
+'				Gui.FrmKA.GsGCKA.GetCellValueByColumnName("gvKA","JOB",V.Args.RowIndex,v.Local.sWO)
+'				Gui.FrmKA.GsGCKA.GetCellValueByColumnName("gvKA","SUFFIX",V.Args.RowIndex,v.Local.sSuffix)
+'				f.Intrinsic.String.Build("{0}!*!{1}!*!1811",V.Local.sWO,V.Local.sSuffix,V.Local.sTemp)
+'				F.Global.General.CallWrapperSync(900100,V.Local.sTemp)
+'				'print pick list
+'				Gui.FrmKA.GsGCKA.GetCellValueByColumnName("gvKA","JOB",V.Args.RowIndex,v.Local.sWO)
+'				Gui.FrmKA.GsGCKA.GetCellValueByColumnName("gvKA","SUFFIX",V.Args.RowIndex,v.Local.sSuffix)
+'				F.Intrinsic.String.Build("{0}!*!{1}!*!{0}!*!{1}",V.Local.sWO,V.Local.sSuffix,V.Local.sTemp)
+'				F.Global.General.CallWrapperSync(900200,V.Local.sTemp)
+				
+				
+	F.Intrinsic.Control.EndSelect
+	
+	F.Intrinsic.Control.CallSub(enablescreen)
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.GsGridControlKA_RowCellClick.End
+
+Program.Sub.GsGridControlKA_CellValueChanged.Start
+F.Intrinsic.Control.Try
+	v.Local.sWO.Declare
+	v.Local.sSuf.Declare
+	v.Local.sSQL.Declare
+	v.Local.sText.Declare
+	v.Local.bEditWO.Declare
+	v.Local.sColumn.Declare
+	v.Local.sValue.Declare
+	v.Local.sFilter.Declare
+	v.Local.sRet.Declare
+	v.Local.iCnt.Declare
+	
+	f.Intrinsic.String.Trim(v.Args.Value,v.Local.sValue)
+	
+	Gui.FrmKA.GsGCKA.GetCellValueByColumnName("gvKA","JOB",V.Args.rowIndex,v.Local.sWO)
+	Gui.FrmKA.GsGCKA.GetCellValueByColumnName("gvKA","SUFFIX",V.Args.RowIndex,v.Local.sSuf)
+	F.Intrinsic.Control.SelectCase(v.Args.column.UCase)
+		f.Intrinsic.Control.CaseAny("USER_1","USER_2","USER_3","USER_4","USER_5","USER_6","USER_7","USER_8","USER_9","USER_10")					
+			F.Intrinsic.String.Left(v.Local.sValue,70,v.Local.sText)
+			F.Intrinsic.String.Build("SELECT * FROM WO_USER_FLDS WHERE JOB = '{0}' AND SUFFIX = '{1}';",v.Local.sWO,v.Local.sSuf,v.Local.sSQL)
+			F.ODBC.Connection!con.OpenRecordsetRW("rstNotes",v.Local.sSQL)
+			F.Intrinsic.Control.If(V.ODBC.con!rstNotes.EOF,=,true)
+				f.ODBC.con!rstNotes.AddNew
+			f.Intrinsic.Control.EndIf
+			F.ODBC.con!rstNotes.Set!JOB(v.Local.sWO)
+			F.ODBC.con!rstNotes.Set!SUFFIX(v.Local.sSuf)
+			f.Intrinsic.Control.SelectCase(v.Args.Column.UCase)
+				f.Intrinsic.Control.Case("USER_1")
+					v.Local.sText.Set(v.Local.sText.left30)
+					F.ODBC.con!rstNotes.Set!USER_1(v.Local.sText)
+				f.Intrinsic.Control.Case("USER_2")
+					v.Local.sText.Set(v.Local.sText.left30)
+					F.ODBC.con!rstNotes.Set!USER_2(v.Local.sText)
+				f.Intrinsic.Control.Case("USER_3")
+					v.Local.sText.Set(v.Local.sText.left30)
+					F.ODBC.con!rstNotes.Set!USER_3(v.Local.sText)
+				f.Intrinsic.Control.Case("USER_4")
+					v.Local.sText.Set(v.Local.sText.left30)
+					F.ODBC.con!rstNotes.Set!USER_4(v.Local.sText)
+				f.Intrinsic.Control.Case("USER_5")
+					v.Local.sText.Set(v.Local.sText.left30)
+					F.ODBC.con!rstNotes.Set!USER_5(v.Local.sText)
+				f.Intrinsic.Control.Case("USER_6")
+					F.ODBC.con!rstNotes.Set!USER_6(v.Local.sText)
+				f.Intrinsic.Control.Case("USER_7")
+					F.ODBC.con!rstNotes.Set!USER_7(v.Local.sText)
+				f.Intrinsic.Control.Case("USER_8")
+					F.ODBC.con!rstNotes.Set!USER_8(v.Local.sText)
+				f.Intrinsic.Control.Case("USER_9")
+					F.ODBC.con!rstNotes.Set!USER_9(v.Local.sText)
+				f.Intrinsic.Control.Case("USER_10")			
+					F.ODBC.con!rstNotes.Set!USER_10(v.Local.sText)
+			f.Intrinsic.Control.EndSelect
+			f.ODBC.con!rstNotes.Update
+			f.ODBC.con!rstNotes.Close
+			
+			'Update gsDue
+			f.Intrinsic.String.Build("Job = '{0}' and Suffix = '{1}'",v.Local.sWO,v.Local.sSuf,v.Local.sFilter)
+			f.Data.DataTable.Select("dtDue",v.Local.sFilter,v.Local.sRet)
+			f.Intrinsic.Control.If(v.Local.sRet,<>,"***NORETURN***")
+				F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+				F.Intrinsic.Control.For(V.Local.iCnt,0,v.Local.sRet.UBound,1)
+					f.Data.DataTable.SetValue("dtDue",v.Local.sRet,v.Args.column,v.Local.sText)
+				F.Intrinsic.Control.Next(V.Local.iCnt)
+			f.Intrinsic.Control.EndIf
+			
+		f.Intrinsic.Control.Case("NOTES")
+			F.Intrinsic.String.Build("SELECT * FROM GAB_4169_WO_NOTES WHERE JOB = '{0}' AND SUFFIX = '{1}';",V.Local.sWO,V.Local.sSuf,V.Local.sSQL)
+			F.ODBC.Connection!con.OpenRecordsetRW("rstNotes",v.Local.sSQL)
+			F.Intrinsic.Control.If(v.ODBC.con!rstNotes.EOF,=,true)
+				f.ODBC.con!rstNotes.AddNew
+			f.Intrinsic.Control.EndIf
+			f.ODBC.con!rstNotes.Set!JOB(v.Local.sWO)
+			f.ODBC.con!rstNotes.Set!SUFFIX(v.Local.sSuf)
+			f.ODBC.con!rstNotes.Set!NOTES(v.Args.value)
+			f.ODBC.con!rstNotes.Update
+			f.ODBC.con!rstNotes.Close
+			'Update gsDue
+			f.Intrinsic.String.Build("Job = '{0}' and Suffix = '{1}'",v.Local.sWO,v.Local.sSuf,v.Local.sFilter)
+			f.Data.DataTable.Select("dtDue",v.Local.sFilter,v.Local.sRet)
+			f.Intrinsic.Control.If(v.Local.sRet,<>,"***NORETURN***")
+				F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+				F.Intrinsic.Control.For(V.Local.iCnt,0,v.Local.sRet.UBound,1)
+					f.Data.DataTable.SetValue("dtDue",v.Local.sRet,v.Args.column,v.Args.value)
+				F.Intrinsic.Control.Next(V.Local.iCnt)
+			f.Intrinsic.Control.EndIf			
+			
+	f.Intrinsic.Control.EndSelect
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.GsGridControlKA_CellValueChanged.End
+
+Program.Sub.cmdRefresh_Click.Start
+F.Intrinsic.Control.Try
+
+	F.Intrinsic.Control.If(V.Global.bLoadData)
+		F.Intrinsic.Control.CallSub(Serialize)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.BlockEvents
+	f.Intrinsic.Control.CallSub(lockscreen)
+	f.Intrinsic.Control.CallSub(checkTable)
+	f.Intrinsic.Control.CallSub(loaddtdvKA)
+	F.Intrinsic.Control.CallSub(Deserialize)
+	f.Intrinsic.Control.CallSub(enablescreen)
+	F.Intrinsic.Control.UnBlockEvents
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdRefresh_Click.End
+
+Program.Sub.cmdExport_Click.Start
+F.Intrinsic.Control.Try
+	
+	V.Local.sFileExport.Declare
+	V.Local.bExcel.Declare
+	V.Local.bFileLocked.Declare
+	V.Local.sMsg.Declare
+
+	F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+
+	'dtKA
+	F.Intrinsic.Control.If(V.Local.bExcel)
+		F.Intrinsic.String.Build("{0}\GCG_6805_Export_{1}.xlsx",V.Caller.LocalGssTempDir,V.Ambient.Now.Formatyyyymmddhhnnss,V.Local.sFileExport)
+		F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+		F.Intrinsic.Control.If(V.Local.bFileLocked)
+			F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+			F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+		F.Intrinsic.Control.Else
+			Gui.FrmKA.GsGCKA.Export(V.Local.sFileExport,"xlsx")
+			F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("{0}\GCG_6805_Export_{1}.csv",V.Caller.LocalGssTempDir,V.Ambient.Now.Formatyyyymmddhhnnss,V.Local.sFileExport)
+		F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+		F.Intrinsic.Control.If(V.Local.bFileLocked)
+			F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+			F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+		F.Intrinsic.Control.Else
+			Gui.FrmKA.GsGCKA.Export(V.Local.sFileExport,"csv")
+		F.Intrinsic.Control.EndIf
+			F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+		F.Intrinsic.Control.EndIf
+		
+	'dtDue
+	F.Intrinsic.Control.If(V.Local.bExcel)
+		F.Intrinsic.String.Build("{0}\GCG_6805_Export_DUE_{1}.xlsx",V.Caller.LocalGssTempDir,V.Ambient.Now.Formatyyyymmddhhnnss,V.Local.sFileExport)
+		F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+		F.Intrinsic.Control.If(V.Local.bFileLocked)
+			F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+			F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+		F.Intrinsic.Control.Else
+			Gui.FrmKA.gsDue.Export(V.Local.sFileExport,"xlsx")
+			F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("{0}\GCG_6805_Export_DUE_{1}.csv",V.Caller.LocalGssTempDir,V.Ambient.Now.Formatyyyymmddhhnnss,V.Local.sFileExport)
+		F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+		F.Intrinsic.Control.If(V.Local.bFileLocked)
+			F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+			F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+		F.Intrinsic.Control.Else
+			Gui.FrmKA.gsDue.Export(V.Local.sFileExport,"csv")
+		F.Intrinsic.Control.EndIf
+			F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+		F.Intrinsic.Control.EndIf		
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdExport_Click.End
+
+Program.Sub.picGSSLogo_DblClick.Start
+F.Intrinsic.Control.Try
+	
+	Gui.frmWeb..Show
+	gui.frmWeb..AlwaysOnTop(True)
+	gui.frmWeb..AlwaysOnTop(False)
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.picGSSLogo_DblClick.End
+
+Program.Sub.frmWeb_UnLoad.Start
+F.Intrinsic.Control.Try
+	
+	Gui.frmWeb..Visible(False)
+	gui.FrmKA..AlwaysOnTop(True)
+	gui.FrmKA..AlwaysOnTop(False)
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.frmWeb_UnLoad.End
+
+Program.Sub.cmdGSS_Click.Start
+F.Intrinsic.Control.Try
+	
+	F.Intrinsic.Task.ShellExec(0,"Open","http://www.globalshopsolutions.com/","","",0)
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdGSS_Click.End
+
+Program.Sub.cmdServ_Click.Start
+F.Intrinsic.Control.Try
+	
+	F.Intrinsic.Task.ShellExec(0,"Open","http://gss-service.com/","","",0)
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdServ_Click.End
+
+Program.Sub.cmdUpd_Click.Start
+F.Intrinsic.Control.Try
+	
+	F.Intrinsic.Task.ShellExec(0,"Open","http://gss-updates.com/","","",0)
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdUpd_Click.End
+
+Program.Sub.chkCutOff_Click.Start
+f.Intrinsic.Control.If(v.Screen.FrmKA!chkCutOff.Value,=,1)
+	gui.FrmKA.dtpStart.Enabled(True)
+	gui.FrmKA.dtpEnd.Enabled(True)
+f.Intrinsic.Control.Else
+	gui.FrmKA.dtpStart.Enabled(False)
+	gui.FrmKA.dtpEnd.Enabled(False)	
+f.Intrinsic.Control.EndIf
+Program.Sub.chkCutOff_Click.End
+
+Program.Sub.gsDue_CellValueChanged.Start
+F.Intrinsic.Control.Try
+	v.Local.sWO.Declare
+	v.Local.sSuf.Declare
+	v.Local.sSQL.Declare
+	v.Local.sText.Declare
+	v.Local.bEditWO.Declare
+	v.Local.sColumn.Declare
+	v.Local.sValue.Declare
+	v.Local.sFilter.Declare
+	v.Local.iCnt.Declare
+	v.Local.sRet.Declare
+	
+	f.Intrinsic.String.Trim(v.Args.Value,v.Local.sValue)
+	
+	Gui.FrmKA.gsDue.GetCellValueByColumnName("gvDue","JOB",V.Args.rowIndex,v.Local.sWO)
+	Gui.FrmKA.gsDue.GetCellValueByColumnName("gvDue","SUFFIX",V.Args.RowIndex,v.Local.sSuf)
+	F.Intrinsic.Control.SelectCase(v.Args.column.UCase)
+		f.Intrinsic.Control.CaseAny("USER_1","USER_2","USER_3","USER_4","USER_5","USER_6","USER_7","USER_8","USER_9","USER_10")					
+			F.Intrinsic.String.Left(v.Local.sValue,70,v.Local.sText)
+			F.Intrinsic.String.Build("SELECT * FROM WO_USER_FLDS WHERE JOB = '{0}' AND SUFFIX = '{1}';",v.Local.sWO,v.Local.sSuf,v.Local.sSQL)
+			F.ODBC.Connection!con.OpenRecordsetRW("rstNotes",v.Local.sSQL)
+			F.Intrinsic.Control.If(V.ODBC.con!rstNotes.EOF,=,true)
+				f.ODBC.con!rstNotes.AddNew
+			f.Intrinsic.Control.EndIf
+			F.ODBC.con!rstNotes.Set!JOB(v.Local.sWO)
+			F.ODBC.con!rstNotes.Set!SUFFIX(v.Local.sSuf)
+			f.Intrinsic.Control.SelectCase(v.Args.Column.UCase)
+				f.Intrinsic.Control.Case("USER_1")
+					v.Local.sText.Set(v.Local.sText.left30)
+					F.ODBC.con!rstNotes.Set!USER_1(v.Local.sText)
+				f.Intrinsic.Control.Case("USER_2")
+					v.Local.sText.Set(v.Local.sText.left30)
+					F.ODBC.con!rstNotes.Set!USER_2(v.Local.sText)
+				f.Intrinsic.Control.Case("USER_3")
+					v.Local.sText.Set(v.Local.sText.left30)
+					F.ODBC.con!rstNotes.Set!USER_3(v.Local.sText)
+				f.Intrinsic.Control.Case("USER_4")
+					v.Local.sText.Set(v.Local.sText.left30)
+					F.ODBC.con!rstNotes.Set!USER_4(v.Local.sText)
+				f.Intrinsic.Control.Case("USER_5")
+					v.Local.sText.Set(v.Local.sText.left30)
+					F.ODBC.con!rstNotes.Set!USER_5(v.Local.sText)
+				f.Intrinsic.Control.Case("USER_6")
+					F.ODBC.con!rstNotes.Set!USER_6(v.Local.sText)
+				f.Intrinsic.Control.Case("USER_7")
+					F.ODBC.con!rstNotes.Set!USER_7(v.Local.sText)
+				f.Intrinsic.Control.Case("USER_8")
+					F.ODBC.con!rstNotes.Set!USER_8(v.Local.sText)
+				f.Intrinsic.Control.Case("USER_9")
+					F.ODBC.con!rstNotes.Set!USER_9(v.Local.sText)
+				f.Intrinsic.Control.Case("USER_10")			
+					F.ODBC.con!rstNotes.Set!USER_10(v.Local.sText)
+			f.Intrinsic.Control.EndSelect
+			f.ODBC.con!rstNotes.Update
+			f.ODBC.con!rstNotes.Close
+			
+			'Update dtKA
+			f.Intrinsic.String.Build("Job = '{0}' and Suffix = '{1}'",v.Local.sWO,v.Local.sSuf,v.Local.sFilter)
+			f.Data.DataTable.Select("dtKA",v.Local.sFilter,v.Local.sRet)
+			f.Intrinsic.Control.If(v.Local.sRet,<>,"***NORETURN***")
+				F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+				F.Intrinsic.Control.For(V.Local.iCnt,0,v.Local.sRet.UBound,1)
+					f.Data.DataTable.SetValue("dtKA",v.Local.sRet,v.Args.column,v.Local.sText)
+				F.Intrinsic.Control.Next(V.Local.iCnt)
+			f.Intrinsic.Control.EndIf			
+						
+			
+		f.Intrinsic.Control.Case("NOTES")
+			F.Intrinsic.String.Build("SELECT * FROM GAB_4169_WO_NOTES WHERE JOB = '{0}' AND SUFFIX = '{1}';",V.Local.sWO,V.Local.sSuf,V.Local.sSQL)
+			F.ODBC.Connection!con.OpenRecordsetRW("rstNotes",v.Local.sSQL)
+			F.Intrinsic.Control.If(v.ODBC.con!rstNotes.EOF,=,true)
+				f.ODBC.con!rstNotes.AddNew
+			f.Intrinsic.Control.EndIf
+			f.ODBC.con!rstNotes.Set!JOB(v.Local.sWO)
+			f.ODBC.con!rstNotes.Set!SUFFIX(v.Local.sSuf)
+			f.ODBC.con!rstNotes.Set!NOTES(v.Args.value)
+			f.ODBC.con!rstNotes.Update
+			f.ODBC.con!rstNotes.Close
+			'Update dtKA
+			f.Intrinsic.String.Build("Job = '{0}' and Suffix = '{1}'",v.Local.sWO,v.Local.sSuf,v.Local.sFilter)
+			f.Data.DataTable.Select("dtKA",v.Local.sFilter,v.Local.sRet)
+			f.Intrinsic.Control.If(v.Local.sRet,<>,"***NORETURN***")
+				F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+				F.Intrinsic.Control.For(V.Local.iCnt,0,v.Local.sRet.UBound,1)
+					f.Data.DataTable.SetValue("dtKA",v.Local.sRet,v.Args.column,v.Args.value)
+				F.Intrinsic.Control.Next(V.Local.iCnt)
+			f.Intrinsic.Control.EndIf			
+			
+	f.Intrinsic.Control.EndSelect
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.gsDue_CellValueChanged.End
+
+Program.Sub.gsDue_RowCellClick.Start
+F.Intrinsic.Control.Try
+	V.Local.sWO.Declare
+	V.Local.sSuffix.Declare
+	V.Local.sParams.Declare
+	v.Local.spart.declare
+	'jgp add
+	v.Local.sTemp.Declare
+	v.Local.sLoc.Declare
+	V.Local.bEdit.Declare
+	v.Local.bViewWONoDollars.Declare
+	v.Local.bMaintainWO.Declare
+	V.Local.sPath.Declare
+	V.Local.bExists.Declare
+	
+	'Check View WO No Dollars
+	Function.Global.Security.CheckUserAccessIPM(606,0,v.Local.bViewWONoDollars)
+	Function.Global.Security.CheckUserAccessIPM(611,0,v.Local.bMaintainWO)
+	
+	F.Intrinsic.Control.SelectCase(v.Args.Column.UCase)
+	
+		F.Intrinsic.Control.CaseAny("SEQRES")
+			Gui.FrmKA.gsDue.GetCellValueByColumnName("gvDue","seqRes",v.Args.rowIndex,v.Local.sPart)
+			Gui.FrmKA.gsDue.GetCellValueByColumnName("gvDue","LOCATION",v.Args.rowIndex,v.Local.sLoc)
+			F.Intrinsic.String.Build("{0}bin\SupplyAndDemand.exe",V.Caller.LocalGSSTempDir,V.Local.sPath)
+			F.Intrinsic.File.Exists(V.Local.sPath,V.Local.bExists)
+			F.Intrinsic.Control.If(V.Local.bExists.Not)
+				F.Intrinsic.Task.SetEnvironmentVariable("PARTREVISION",V.Local.sPart)
+				F.Intrinsic.Task.SetEnvironmentVariable("LOCATIONCODE",V.Local.sLoc)
+				Gui.FrmKA..Enabled(False)
+				F.Intrinsic.Task.LaunchAsync(V.Local.sPath,1,V.Local.sPath)
+				Gui.FrmKA..Enabled(True)
+			F.Intrinsic.Control.Else
+				f.Intrinsic.String.Build("{0}!*!{1}!*!M",v.Local.sPart,v.Local.sLoc,v.Local.sParams)
+				F.Global.General.CallWrapperASync(300011,v.Local.sParams)
+			F.Intrinsic.Control.EndIf
+	
+		F.Intrinsic.Control.CaseAny("JOB","SUFFIX","PART")
+			f.Intrinsic.Control.CallSub("LockScreen")
+			Gui.FrmKA.gsDue.GetCellValueByColumnName("gvDue","JOB",V.Args.rowIndex,v.Local.sWO)
+			Gui.FrmKA.gsDue.GetCellValueByColumnName("gvDue","SUFFIX",v.Args.rowIndex,v.Local.sSuffix)
+			Gui.FrmKA.gsDue.GetCellValueByColumnName("gvDue","PART",v.Args.rowIndex,v.Local.sPart)
+			Gui.FrmKA.gsDue.GetCellValueByColumnName("gvDue","LOCATION",v.Args.rowIndex,v.Local.sLoc)			
+			
+			'additions made for project 4564 if the PART column is selected launch the Supply and Demand screen
+			f.Intrinsic.Control.If(v.Args.column,=,"PART")		
+				F.Intrinsic.Control.If(v.Local.sPart,<>,"")
+					F.Intrinsic.Control.If(V.Screen.FrmKA!optView.Value,=,True)				
+						F.Intrinsic.String.ConcatCallWrapperArgs(V.Local.sPart,V.Local.sLoc,"O",V.Local.sParams)
+					F.Intrinsic.Control.Else
+						'Check Supply and Demand with Edit
+						Function.Global.Security.CheckUserAccessIPM(371,0,v.Local.bEdit)
+						f.Intrinsic.Control.If(v.Local.bEdit)
+							'Open Supply and Demand with Edit
+							F.Intrinsic.String.ConcatCallWrapperArgs(V.Local.sPart,V.Local.sLoc,"M",V.Local.sParams)
+						f.Intrinsic.Control.Else
+							'Open Supply and Demand
+							F.Intrinsic.String.ConcatCallWrapperArgs(V.Local.sPart,V.Local.sLoc,"O",V.Local.sParams)
+						f.Intrinsic.Control.EndIf					
+					F.Intrinsic.Control.EndIf
+					F.Global.General.CallWrapperSync(300011,V.Local.sParams)
+				F.Intrinsic.Control.EndIf							
+		
+		
+			f.Intrinsic.Control.ElseIf(v.Args.column,=,"JOB",or,v.Args.column,=,"SUFFIX")
+				f.Intrinsic.Control.CallSub("LockScreen")
+		
+				F.Intrinsic.Control.If(V.Local.sWO,<>,"")
+					'Edit
+					F.Intrinsic.Control.If(V.Screen.FrmKA!optEdit.Value,=,True)
+						Function.Global.Security.CheckUserAccessIPM(527,1,v.Local.bEdit)
+						f.Intrinsic.Control.If(v.Local.bEdit)
+							'Can Edit WO
+							F.Intrinsic.String.ConcatCallWrapperArgs(V.Local.sWO,V.Local.sSuffix,"O",V.Local.sParams)
+							F.Global.General.CallWrapperAsync(2009,V.Local.sParams)
+						f.Intrinsic.Control.Else
+							'View WO
+							f.Intrinsic.Control.If(v.Local.bViewWONoDollars)
+								'No Dollars
+								F.Intrinsic.String.ConcatCallWrapperArgs("Col8",V.Local.sWO,V.Local.sSuffix,"A",V.Local.sParams)
+								F.Global.General.CallWrapperAsync(450000,V.Local.sParams)
+							f.Intrinsic.Control.Else
+								'With dollars
+								F.Intrinsic.String.ConcatCallWrapperArgs("Col7",V.Local.sWO,V.Local.sSuffix,"A",V.Local.sParams)
+								F.Global.General.CallWrapperAsync(450000,V.Local.sParams)					
+							f.Intrinsic.Control.EndIf
+						f.Intrinsic.Control.EndIf	
+					
+					'Issue
+					F.Intrinsic.Control.ElseIf(V.Screen.FrmKA!optIssue.Value,=,True)								
+						F.Intrinsic.String.Build("{0}!*!{1}!*! !*! !*! !*! !*! ",V.Local.sWO,V.Local.sSuffix,V.Local.sParams)
+						F.Global.General.CallWrapperSync(450150,V.Local.sParams)
+						F.Intrinsic.Control.SelectCase(V.Global.iPrintAudit)
+							F.Intrinsic.Control.Case(1)
+								F.Global.General.CallWrapperSync(50,"JB0057")
+							'F.Intrinsic.Control.Case(2)
+								'Do Not Print Audit Trail
+							F.Intrinsic.Control.Case(3)
+								'Print Audit Trail
+								F.Global.General.CallWrapperSync(50,"JB0057")
+						F.Intrinsic.Control.EndSelect
+						
+					'Wip	
+					F.Intrinsic.Control.ElseIf(V.Screen.FrmKA!optWiptoFG.Value,=,True)
+						F.Intrinsic.String.Build("{0}!*!{1}!*!{2}!*!OS!*!!*!!*!!*!!*!!*!!*!{3}!*!{4}!*!16!*!03!*!02!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!",V.Caller.CompanyCode,V.Caller.Terminal,V.Caller.Caller,V.Local.sWO,V.Local.sSuffix,V.Local.sParams)
+						F.Global.General.CallWrapperSync(2003,V.Local.sParams)
+						F.Intrinsic.Control.SelectCase(V.Global.iPrintAudit)
+							F.Intrinsic.Control.Case(1)
+								F.Global.General.CallWrapperSync(50,"JB0057/C")
+							F.Intrinsic.Control.Case(2)
+								'Do Not Print
+							F.Intrinsic.Control.Case(3)
+								F.Global.General.CallWrapperSync(50,"JB0057/C")
+						F.Intrinsic.Control.EndSelect
+						
+					'View	
+					F.Intrinsic.Control.Else
+					
+						f.Intrinsic.Control.If(v.Local.bViewWONoDollars)
+							'No Dollars
+							F.Intrinsic.String.ConcatCallWrapperArgs("Col8",V.Local.sWO,V.Local.sSuffix,"A",V.Local.sParams)
+							F.Global.General.CallWrapperAsync(450000,V.Local.sParams)
+						f.Intrinsic.Control.Else
+							'With dollars
+							F.Intrinsic.String.ConcatCallWrapperArgs("Col7",V.Local.sWO,V.Local.sSuffix,"A",V.Local.sParams)
+							F.Global.General.CallWrapperAsync(450000,V.Local.sParams)					
+						f.Intrinsic.Control.EndIf
+
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.EndIf
+			
+			'End if Column = Job/Suffix/Part
+			F.Intrinsic.Control.EndIf				
+			
+		'JGP added code to print work order and pick slip	
+			F.Intrinsic.Control.Case("FLAG_WO_PRTD")
+				f.Intrinsic.Control.CallSub("LockScreen")
+				'print WO
+				Gui.FrmKA.gsDue.SetCellValueByColumnName("gvDue","FLAG_WO_PRTD",V.Args.RowIndex,True)
+				Gui.FrmKA.gsDue.GetCellValueByColumnName("gvDue","JOB",V.Args.RowIndex,v.Local.sWO)
+				Gui.FrmKA.gsDue.GetCellValueByColumnName("gvDue","SUFFIX",V.Args.RowIndex,v.Local.sSuffix)
+				f.Intrinsic.String.Build("{0}!*!{1}!*!1811",V.Local.sWO,V.Local.sSuffix,V.Local.sTemp)
+				F.Global.General.CallWrapperSync(900100,V.Local.sTemp)
+				'print pick list
+				Gui.FrmKA.gsDue.GetCellValueByColumnName("gvDue","JOB",V.Args.RowIndex,v.Local.sWO)
+				Gui.FrmKA.gsDue.GetCellValueByColumnName("gvDue","SUFFIX",V.Args.RowIndex,v.Local.sSuffix)
+				F.Intrinsic.String.Build("{0}!*!{1}!*!{0}!*!{1}",V.Local.sWO,V.Local.sSuffix,V.Local.sTemp)
+				F.Global.General.CallWrapperSync(900200,V.Local.sTemp)
+	
+	F.Intrinsic.Control.EndSelect
+	
+	F.Intrinsic.Control.CallSub(enablescreen)	
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.gsDue_RowCellClick.End
+
+Program.Sub.cmdResetGsGC_Click.Start
+F.Intrinsic.Control.Try
+	v.Local.sUserID.Declare
+	V.Local.sSerialize.Declare
+	v.Local.sSQL.Declare	
+	
+	F.Global.Security.GetUserID(v.Caller.User,v.Caller.CompanyCode,v.Local.sUserID)
+	'Delete old registry records
+	F.ODBC.Connection!common.OpenCommonConnection
+	f.Intrinsic.String.Build("Delete From Gs_Registry Where User_ID = '{0}' and Company = '{1}' and Reg_ID = '6805' and Seq = '1001' and Program = '{2}';",v.Local.sUserID,v.Caller.CompanyCode,"gvKA",v.Local.sSQL)
+	F.ODBC.Connection!common.Execute(v.Local.sSQL)	
+	f.Intrinsic.String.Build("Delete From Gs_Registry Where User_ID = '{0}' and Company = '{1}' and Reg_ID = '6805' and Seq = '1001' and Program = '{2}';",v.Local.sUserID,v.Caller.CompanyCode,"gvDue",v.Local.sSQL)
+	F.ODBC.Connection!common.Execute(v.Local.sSQL)		
+	f.ODBC.Connection!common.Close
+	
+	F.Intrinsic.Control.If(V.Global.bLoadData)
+		F.Intrinsic.Control.CallSub(Serialize)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.BlockEvents
+	f.Intrinsic.Control.CallSub(lockscreen)
+	f.Intrinsic.Control.CallSub(loaddtdvKA)
+	f.Intrinsic.Control.CallSub(enablescreen)
+	F.Intrinsic.Control.UnBlockEvents		
+		
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdResetGsGC_Click.End
+
+Program.Sub.Process_MRP.Start
+F.Intrinsic.Control.Try
+
+v.Local.sReady.Declare
+	v.Local.sFilter.Declare
+	v.Local.fPcsToProd.Declare
+	v.Local.iRowIndex.Declare
+	v.Local.fHold.Declare
+	v.Local.iCnt.Declare
+	v.Local.sPart.Declare
+	v.Local.sLoc.Declare
+	v.Local.sRet.Declare	
+	v.Local.fPcsToProdAfterAlloc.Declare
+	
+	v.Local.sReady.Set("Y")
+	
+	Gui.FrmKA.lblStatus.Caption("Checking for Material Availability....")
+	
+	'1/
+	f.Intrinsic.String.Build("Job = '{0}' and SUFFIX = '{1}' and CODE_SOURCE in ('P','M','F') and ComplDate = #01/01/1900# and PCSTOPROD <> 0",v.Args.sJob,v.Args.sSuffix,v.Local.sFilter)
+	f.Data.DataView.SetFilter("dtKA","dvKA",v.Local.sFilter)	
+	f.Intrinsic.Control.If(v.DataView.dtKA!dvKA.RowCount,>,0)
+		f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataView.dtKA!dvKA.RowCount--,1)
+			v.Local.fPcsToProdAfterAlloc.Set(v.DataView.dtKA!dvKA(v.Local.iCnt).PCSTOPROD!FieldValString)
+			
+			f.Intrinsic.Control.If(v.Local.fPcsToProdAfterAlloc,>,0)
+
+				f.Intrinsic.String.Replace(v.DataView.dtKA!dvKA(v.Local.iCnt).SEQRES!FieldValString,"'","''",v.Local.sPart)
+				v.Local.sLoc.Set(v.DataView.dtKA!dvKA(v.Local.iCnt).Location!FieldValString)
+				f.Intrinsic.String.Build("PartLoc = '{0}-{1}'",v.Local.sPart,v.Local.sLoc,v.Local.sFilter)
+				f.Data.DataTable.Select("PartLocMRP",v.Local.sFilter,v.Local.sRet)
+				f.Intrinsic.Control.If(v.Local.sRet,<>,"***NORETURN***")
+					V.Local.iRowIndex.Set(V.Local.sRet.Long)				
+					f.Intrinsic.Math.Sub(v.DataTable.PartLocMRP(v.Local.iRowIndex).Mrp_Qty!FieldValString,v.Local.fPcsToProdAfterAlloc,v.Local.fHold)
+					f.Data.DataTable.SetValue("PartLocMRP",v.Local.iRowIndex,"Mrp_Qty",v.Local.fHold)
+					f.Intrinsic.Control.If(v.Local.fHold,<,0)
+						v.Local.sReady.Set("")
+					f.Intrinsic.Control.EndIf				
+				f.Intrinsic.Control.EndIf
+			
+			f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.Control.Next(v.Local.iCnt)
+		F.Intrinsic.Control.If(V.Local.sReady,=,"")
+			f.Intrinsic.Variable.AddRV("sReady",v.Local.sReady)
+			f.Intrinsic.Control.ExitSub			
+		F.Intrinsic.Control.EndIf		
+	f.Intrinsic.Control.EndIf	
+		
+	'2/
+	f.Intrinsic.String.Build("Job = '{0}' and SUFFIX = '{1}' and CODE_SOURCE in ('P','M','F') and ComplDate = #01/01/1900# and PCSTOPROD = 0",v.Args.sJob,v.Args.sSuffix,v.Local.sFilter)
+	f.Data.DataView.SetFilter("dtKA","dvKA",v.Local.sFilter)
+	f.Intrinsic.Control.If(v.DataView.dtKA!dvKA.RowCount,>,0)
+		v.Local.sReady.Set("")
+		f.Intrinsic.Variable.AddRV("sReady",v.Local.sReady)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf				
+	
+	'3/
+	f.Intrinsic.String.Build("Job = '{0}' and SUFFIX = '{1}' and CODE_SOURCE in ('P','M','F') and ComplDate <> #01/01/1900#",v.Args.sJob,v.Args.sSuffix,v.Local.sFilter)
+	f.Data.DataView.SetFilter("dtKA","dvKA",v.Local.sFilter)
+	f.Intrinsic.Control.If(v.DataView.dtKA!dvKA.RowCount,>,0)
+		v.Local.sReady.Set("")
+		f.Intrinsic.Variable.AddRV("sReady",v.Local.sReady)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf		
+	
+	'4/
+	f.Intrinsic.String.Build("Job = '{0}' and SUFFIX = '{1}' and CODE_SOURCE not in ('P','M','F')",v.Args.sJob,v.Args.sSuffix,v.Local.sFilter)
+	f.Data.DataView.SetFilter("dtKA","dvKA",v.Local.sFilter)
+	f.Intrinsic.Control.If(v.DataView.dtKA!dvKA.RowCount,>,0)
+		v.Local.sReady.Set("")
+		f.Intrinsic.Variable.AddRV("sReady",v.Local.sReady)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf	
+	
+	f.Intrinsic.Variable.AddRV("sReady",v.Local.sReady)
+
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.Process_MRP.End
+
+Program.Sub.CheckFullyAllocated.Start
+f.Intrinsic.Control.Try
+	
+	'Get all required to be issued
+	f.Intrinsic.Control.If(v.DataTable.dtAlloc.Exists)
+		f.Data.DataTable.Close("dtAlloc")
+	f.Intrinsic.Control.EndIf	
+	f.Data.DataTable.CreateFromSQL("dtAlloc","con","SELECT A.JOB,A.SFX,A.JOB + A.SFX as JobSuffix,A.SEQ,A.SEQRES,a.PCSTOPROD ,B.LOCATION ,D.CODE_SOURCE ,A.Seqres + '-' + B.Location + '-' + A.JOB + A.SFX + Right('000000' + Cast(Seq as Varchar),6) as PartLocJobSuffixSeq ,Convert(0,SQL_Float) as Allocated FROM APSV3_JBLINES A LEFT JOIN V_JOB_HEADER B ON A.JOB = B.JOB AND A.SFX = B.SUFFIX LEFT JOIN INVENTORY_MST2 D ON A.SEQRES = D.PART AND B.LOCATION = D.LOCATION WHERE A.SEQTYPE = 2 And CODE_SOURCE in ('P','M','F') and ComplDate is Null and PCSTOPROD <> 0",True)
+	
+	'Get Current allocated from item master and populate in parallel with all required dt
+	f.Data.Dictionary.CreateFromSQL("AllocDict","con","select Part + '-' + Location + '-' + Heat as PartLocJobSuffixSeq, Quantity from item_master where heat <> '' and Alloc_Type = 'W'")
+	f.Data.Dictionary.SetDefaultReturn("AllocDict",0)
+	f.Data.DataTable.FillFromDictionary("dtAlloc","AllocDict","PartLocJobSuffixSeq","Allocated")
+	f.Data.Dictionary.Close("AllocDict")
+	
+	'Get full allocated sequences
+	f.Data.DataTable.AddExpressionColumn("dtAlloc","FullAllocated","boolean","IIF([PCSTOPROD] <= [Allocated],1,0)")
+	f.Intrinsic.Control.If(v.DataTable.dtFullAllocated.Exists)
+		f.Data.DataTable.Close("dtFullAllocated")
+	f.Intrinsic.Control.EndIf	
+	f.Data.DataView.Create("dtAlloc","dvAlloc",22,"FullAllocated = 1","")	
+	f.Data.DataView.ToDataTableDistinct("dtAlloc","dvAlloc","dtFullAllocated","JobSuffix*!*FullAllocated",True)
+	F.Data.DataTable.AddColumn("dtFullAllocated","Validated","boolean",True)
+	
+	'Get not allocated/not fully allocated sequences
+	f.Data.DataView.SetFilter("dtAlloc","dvAlloc","FullAllocated = 0")	
+	f.Intrinsic.Control.If(v.DataTable.dtNOTFullAllocated.Exists)
+		f.Data.DataTable.Close("dtNOTFullAllocated")
+	f.Intrinsic.Control.EndIf		
+	f.Data.DataView.ToDataTableDistinct("dtAlloc","dvAlloc","dtNOTFullAllocated","JobSuffix*!*FullAllocated",True)	
+	f.Data.Dictionary.CreateFromDatatable("NOTFullorPartiallyAllocDict","dtNOTFullAllocated","JobSuffix","FullAllocated")
+	f.Data.Dictionary.SetDefaultReturn("NOTFullorPartiallyAllocDict",True)
+	'Go back and flag the fullAllocated that contains some that are not fullallocated
+	f.Data.DataTable.FillFromDictionary("dtFullAllocated","NOTFullorPartiallyAllocDict","JobSuffix","Validated")
+	f.Data.Dictionary.Close("NOTFullorPartiallyAllocDict")
+	'Turn that Final FullAllocated into dictionary and flag dtAll
+	f.Intrinsic.Control.If(v.DataTable.dtFullAllocatedFinal.Exists)
+		f.Data.DataTable.Close("dtFullAllocatedFINAL")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataView.Create("dtFullAllocated","dvFullAllocated",22,"Validated = 1","")	
+	f.Data.DataView.ToDataTableDistinct("dtFullAllocated","dvFullAllocated","dtFullAllocatedFINAL","JobSuffix*!*Validated",True)
+	f.Data.Dictionary.CreateFromDataTable("FullAllocatedDict","dtFullAllocatedFINAL","JobSuffix","Validated")
+	f.Data.Dictionary.SetDefaultReturn("FullAllocatedDict",False)
+	f.Data.DataTable.FillFromDictionary("dtKA","FullAllocatedDict","JBSF","Fullallocated")
+	f.Data.Dictionary.Close("FullAllocatedDict")	
+
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.CheckFullyAllocated.End
+
+Program.Sub.Color_Ready_And_FullAllocated.Start
+f.Intrinsic.Control.Try
+
+	'Set column color based on Ready/Not Ready
+	gui.FrmKA.[v.Args.Control].AddStyleFormatCondition(v.Args.GV,"Ready","tagReadygvMJ","equal","Y")
+	gui.FrmKA.[v.Args.Control].SetStyleFormatConditionProperty(v.Args.GV,"Ready","tagReadygvMJ","backcolor","LightGreen")	
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.Color_Ready_And_FullAllocated.End
+
+Program.Sub.Mat_Ready.Start
+f.Intrinsic.Control.Try
+v.Local.fQty_Required.Declare
+v.Local.fOnHand.Declare
+v.Local.sSQL.Declare
+v.Local.sReady.Declare
+v.Local.sFilter.Declare
+v.Local.iCnt.Declare
+v.Local.sPart.Declare
+v.Local.sLoc.Declare
+v.Local.fRunningOnHand.Declare
+v.Local.sPcsRemain.Declare
+
+v.Local.sReady.Set("Y")
+
+f.Intrinsic.String.Build("JOB = '{0}' and SUFFIX = '{1}'",v.Args.Job,v.Args.Suffix,v.Local.sFilter)
+f.Data.DataView.SetFilter("dtKA","dvKA",v.Local.sFilter)
+
+'filter dvKA dt by job and suffix
+f.Intrinsic.Control.If(v.DataView.dtKA!dvKA.RowCount,>,0)
+	f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataView.dtKA!dvKA.RowCount--,1)
+	'filter PartLoc dt by part and location
+		f.Intrinsic.String.Build("Part = '{0}' and Location = '{1}' and qty_onhand is not NUll",v.DataView.dtKA!dvKA(v.Local.iCnt).SeqRes!FieldValString,v.DataView.dtKA!dvKA(v.Local.iCnt).Location!FieldValString,v.Local.sFilter)
+		f.Data.DataView.SetFilter("PartLocMrp","dvPartLocMrp",v.Local.sFilter)
+		f.Intrinsic.Control.If(v.DataView.PartLocMrp!dvPartLocMrp.RowCount,>,0)
+		'check if on hand qty is sufficient to be issued (onhand qty > pcs remained)
+			f.Intrinsic.Math.Sub(v.DataView.PartLocMrp!dvPartLocMrp(0).qty_onhand!FieldVal,v.DataView.dtKA!dvKA(v.Local.iCnt).PCSREMAIN!FieldVal,v.Local.fRunningOnHand)
+			f.Intrinsic.Control.If(v.Local.fRunningOnHand,>=,0)
+			'do nothing - because we already set Ready to Y
+			f.Intrinsic.Control.Else
+			' there is not sufficient on hand qty for this sequence
+				v.Local.sReady.Set("")
+				f.Intrinsic.Variable.AddRV("sReady",v.Local.sReady)
+				f.Intrinsic.Control.ExitSub			
+			f.Intrinsic.Control.EndIf
+			f.Data.DataView.SetValue("PartLocMrp","dvPartLocMrp",0,"qty_onhand",v.Local.fRunningOnHand)
+		'this part is not in inventory
+		f.Intrinsic.Control.Else
+			v.Local.sReady.Set("")
+			f.Intrinsic.Variable.AddRV("sReady",v.Local.sReady)
+			f.Intrinsic.Control.ExitSub	
+		f.Intrinsic.Control.EndIf
+		
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+'f.Intrinsic.Control.Else
+'	v.Local.sReady.Set("")
+'	f.Intrinsic.Variable.AddRV("sReady",v.Local.sReady)
+'	f.Intrinsic.Control.ExitSub	
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Variable.AddRV("sReady",v.Local.sReady)
+
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catch_Handling","ScriptPath",V.Ambient.ScriptPath,"CurrentSubroutine",V.Ambient.CurrentSubroutine,"ErrorNumber",V.Ambient.ErrorNumber,"ErrorDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.Mat_Ready.End
+
+Program.Sub.Comments.Start
+${$0$}$GAB_SF_OpenJobReview_VarKA$}$Joey & AGV$}$8/26/2016 4:52:39 PM$}$False
+${$5$}$2.0.0.0$}$2
+${$6$}$bpham$}$20220627103606303$}$Di0riF4Q5RIv6jxva5zSWBaTvp+T0Dt6mxjI/5kxuRnMexUfBhqa+y0ky3rMYRl84hHY0FsMVTE=
+Program.Sub.Comments.End
